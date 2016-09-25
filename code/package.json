@@ -1,0 +1,19 @@
+{
+  "name": "lift-off-fitness",
+  "version": "1.0.0",
+  "description": "Competitive fitness website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node_modules/.bin/nodemon -L app.js",
+    "test": "node_modules/mocha/bin/mocha --recursive tests/"
+  },
+  "author": "Frank Cingel, Ryan Bassit, Edouard Michel",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "express": "^4.14.0",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.2"
+  }
+}
