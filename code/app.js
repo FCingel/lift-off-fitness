@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const exphbs = require('express-handlebars');
 
 app.get('/', function (req, res) {
   res.send('The / home page');
 });
+
 
 // Load and mount the home controller
 const home = require('./controllers/home');
@@ -25,9 +27,17 @@ app.use('/profile', profile);
 const leaderboard = require('./controllers/leaderboard');
 app.use('/leaderboard', leaderboard);
 
-// Load and mount the leaderboard controller
-const articles = require('./controllers/articles');
-app.use('/articles', articles);
+// // Load and mount the leaderboard controller
+// const articles = require('./controllers/articles');
+// app.use('/articles', articles);
+
+app.engine('handlebars', exphbs({
+	layoutsDir: './views/layouts',
+	defaultLayout: 'main',
+}));
+
+app.set('view engine', 'handlebars');
+app.set('views', '${__dirname}/views/');
 
 
 module.exports = app;
