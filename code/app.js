@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const exphbs = require('express-handlebars');
+//const exphbs = require('express-handlebars');
 
 app.get('/', function (req, res) {
   res.send('The / home page');
@@ -31,13 +31,13 @@ app.use('/leaderboard', leaderboard);
 // const articles = require('./controllers/articles');
 // app.use('/articles', articles);
 
-app.engine('handlebars', exphbs({
-	layoutsDir: './views/layouts',
-	defaultLayout: 'main',
-}));
+//app.engine('handlebars', exphbs({
+//	layoutsDir: './views/layouts',
+//	defaultLayout: 'main',
+//}));
 
-app.set('view engine', 'handlebars');
-app.set('views', '${__dirname}/views/');
+//app.set('view engine', 'handlebars');
+//app.set('views', '${__dirname}/views/');
 
 
 module.exports = app;
