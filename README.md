@@ -1,6 +1,6 @@
 ##**Full Stack Competitive Fitness Website**
 
-Team:
+**Team:**
 
 Frank Cingel
 
