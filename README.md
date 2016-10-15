@@ -1,4 +1,4 @@
-# H1**Full Stack Competitive Fitness Website**
+##**Full Stack Competitive Fitness Website**
 
 Team:
 Frank Cingel
