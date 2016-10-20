@@ -21,7 +21,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate{
-        notEmpty: true
+        notEmpty: true,
+        isAlphanumeric: true
       }
     },
     email: {
@@ -37,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate{
         notEmpty: true,
-        isAlphanumeric: true
+        len: [6,100]
       }
     }
   }, {

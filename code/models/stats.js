@@ -6,10 +6,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate{
         notEmpty: true,
-        isAlpha: true
+        isAlphanumeric: true
       }
     },
-
     height: {
       type: DataTypes.INTEGER,
       allowNull: false,
