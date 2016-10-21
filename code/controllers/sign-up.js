@@ -1,24 +1,51 @@
 var express = require('express');
 var router = express.Router();
+var models = require('../models');
 
-// middleware that is specific to this router (We did not cover this in class)
-// It applies to all routes defined in this controller
+// middleware that is specific to this router
+// applies to all routes defined in this controller
 router.use(function timeLog(req, res, next) {
-  console.log('sign-up Controller :: Time: ', Date.now());
+  console.log('Sign-Up Controller :: Time: ', Date.now());
   next();
 });
 
 
-// define the root sign-ups route
+// define the root sign-up route
 router.get('/', function(req, res) {
-  res.send('The sign-up page');
+  models.User.findAll({})
+    .then(function (signup) {
+      if (signup != null) {
+        res.render('sign-up/signup', {signup: signup});
+      } else {
+        res.send('sign-up page not found');
+      }
+    });
 });
 
-// define the specific sign-up route
-// Note: 'slug' is how we refer to document titles in url's
-// For some history checkout: http://stackoverflow.com/a/4230937
-router.get('/:slug', function(req, res) {
-  res.send('This is sign-up: ' + req.params.slug);
+// Display the Form
+router.get('/signup', function (req,res) {
+  res.render('sign-up/signup');
 });
+
+
+// Process a submitted form
+router.post('/', function(req,res) {
+  console.log(req.body);
+  models.User.create({
+  	username: req.body.username,
+  	firstName: req.body.firstName,
+  	lastName: req.body.lastName,
+  	email: req.body.email,
+  	password: req.body.password
+  }).then(function (signup) {
+  	//SHOULD REDIRECT TO PROFILE AFTER SUCCESSFUL SIGN UP
+    res.redirect('/users')
+  }).catch(function (e) {
+    res.render('sign-up/signup', {errors: e.errors});
+    // res.json(e);
+  })
+});
+
 
 module.exports = router;
+

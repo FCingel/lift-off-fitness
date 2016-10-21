@@ -1,0 +1,18 @@
+<div class="row">
+<div class="col-xs-12">
+<h1><strong>Users</strong></h1>
+</div>
+</div>
+
+<!-- Prints out information for each User -->
+{{#each users}}
+<div class="row">
+  <div class="col-xs-12">
+  <h2><u>Username:</u> {{username}}<h2>
+  <h3><u>First:</u> {{firstName}} <u>Last:</u> {{lastName}}</h3>
+  <h3><u>Email:</u> {{email}}</h3>
+  <h3><u>Password:</u> {{password}}</h3>
+  <hr />
+  </div>
+</div>
+{{/each}}

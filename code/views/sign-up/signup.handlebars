@@ -1,0 +1,41 @@
+<div class="row">
+<div class="col-xs-12">
+<h1>Create an account</h1>
+</div>
+
+<div class="col-xs-12">
+{{#if errors}}
+  <h3>Errors occured</h3>
+  {{#each errors}}
+    <p>Path: {{path}}</p>
+    <p>Message: {{message}}</p>
+    <hr />
+  {{/each}}
+{{/if}}
+
+  <form name="create-post" action="/sign-up" method="post">
+  <div class="form-group">
+    <label>Username &nbsp;</label>
+    <input type="text" name="username" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" name="firstName" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" name="lastName" placeholder="Last Name">
+  </div>
+  <div class="form-group">
+    <label>Email &emsp;&emsp;</label>
+    <input type="text" name="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="text" name="password" placeholder="Password">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+</div>
+</div>

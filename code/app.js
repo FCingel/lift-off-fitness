@@ -1,17 +1,23 @@
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.engine('handlebars', exphbs({
 	layoutsDir: './views/layouts',
-	defaultLayout: 'main',
+	defaultLayout: 'main'
 }));
 
 app.set('view engine', 'handlebars');
-app.set('views', '${__dirname}/views/');
+app.set('views', `${__dirname}/views/`);
+
+
 
 app.get('/', function (req, res) {
-  res.send('The / home page');
+   res.redirect('/home');
 });
 
 // Load and mount the home controller
@@ -33,6 +39,11 @@ app.use('/profile', profile);
 // Load and mount the leaderboard controller
 const leaderboard = require('./controllers/leaderboard');
 app.use('/leaderboard', leaderboard);
+
+// Load and mount the users controller
+const users = require('./controllers/users');
+app.use('/users', users);
+
 
 module.exports = app;
 app.listen(8000);

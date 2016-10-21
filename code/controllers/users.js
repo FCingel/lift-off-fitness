@@ -5,20 +5,21 @@ var models = require('../models');
 // middleware that is specific to this router
 // applies to all routes defined in this controller
 router.use(function timeLog(req, res, next) {
-  console.log('home Controller :: Time: ', Date.now());
+  console.log('user Controller :: Time: ', Date.now());
   next();
 });
 
+
+// define the root users route
 router.get('/', function(req, res) {
   models.User.findAll({})
-    .then(function (home) {
-      if (home != null) {
-        res.render('home/home', {home: home});
+    .then(function (users) {
+      if (users != null) {
+        res.render('users/users', {users: users});
       } else {
-        res.send('home page not found');
+        res.send('users page not found');
       }
     });
 });
-
 
 module.exports = router;

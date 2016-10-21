@@ -1,0 +1,33 @@
+<div class="row">
+<div class="col-xs-12">
+<h1>Sign in</h1>
+</div>
+
+<div class="col-xs-12">
+{{#if errors}}
+  <h3>Errors occured</h3>
+  {{#each errors}}
+    <p>Path: {{path}}</p>
+    <p>Message: {{message}}</p>
+    <hr />
+  {{/each}}
+{{/if}}
+
+  <form name="create-get" action="/sign-in" method="get">
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Username">
+  </div>
+<!--   <div class="form-group">
+    <label>Email &emsp;&emsp;</label>
+    <input type="text" name="email" placeholder="Email">
+  </div> -->
+  <div class="form-group">
+    <label>Password</label>
+    <input type="text" name="password" placeholder="Password">
+  </div>
+  
+  <button type="submit" class="btn btn-success">Sign In</button>
+  </form>
+</div>
+</div>
