@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
         isAlpha: true
       }
     },
-    homeGym: {
+    gym: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
