@@ -34,12 +34,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     password: {
-      type: DataTypes.STRING
-     // allowNull: false,
-     // validate: {
-     //    notEmpty: true,
-     //    len: [6,100]
-     //  }
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        len: [6,100]
+      }
     }
   }, {
     classMethods: {
