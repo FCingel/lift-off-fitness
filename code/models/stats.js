@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes) {
   var Stats = sequelize.define('Stats', {
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
         notEmpty: true,
         isAlphanumeric: true
@@ -11,33 +10,56 @@ module.exports = function(sequelize, DataTypes) {
     },
     height: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      defaultValue: 0,
       validate: {
-        notEmpty: true,
         isNumeric: true
       }
     },
     weight: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      defaultValue: 0,
       validate: {
-        notEmpty: true,
         isNumeric: true
       }
     },
     gender: {
       type: DataTypes.STRING,
-      allowNull:false,
       validate: {
-        notEmpty: true,
         isAlpha: true
       }
     },
     gym: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
-        notEmpty: true
+        len: [0, 50]
+      }
+    },
+    bench_press: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      validate: {
+        isNumeric: true
+      } 
+    },
+    military_press: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      validate: {
+        isNumeric: true
+      }
+    },
+    squat: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      validate: {
+        isNumeric: true
+      }
+    },
+    deadlift: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      validate: {
+        isNumeric: true
       }
     }
   }, {

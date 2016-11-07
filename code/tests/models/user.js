@@ -14,31 +14,36 @@ describe('User Model', function() {
       });
   });
 
-	it('Should contain a username property',function(done) {
+	  it('Should contain a username property',function(done) {
     	var a1 = models.User.build();
     	expect(a1).to.have.property('username');
     	done();
-  	});
+    });
+
   	it('Should contain a firstName property',function(done) {
     	var a1 = models.User.build();
     	expect(a1).to.have.property('firstName');
     	done();
   	});
-	it('Should contain a lastName property',function(done) {
+
+	  it('Should contain a lastName property',function(done) {
     	var a1 = models.User.build();
    		expect(a1).to.have.property('lastName');
     	done();
   	});
+
   	it('Should contain an email property',function(done) {
     	var a1 = models.User.build();
     	expect(a1).to.have.property('email');
     	done();
   	});
+
   	it('Should contain a password property',function(done) {
     	var a1 = models.User.build();
     	expect(a1).to.have.property('password');
     	done();
   	});
+
   	it('Should NOT contain a secret property',function(done) {
     	var a1 = models.User.build();
     	expect(a1).to.not.have.property('secret');
@@ -90,7 +95,7 @@ describe('User Model', function() {
       		});
     	});
 		
-		it('Should not save when missing a password',function (done) {
+		  it('Should not save when missing a password',function (done) {
       		models.User.create({
       		})
       		.then(function () {
@@ -101,13 +106,13 @@ describe('User Model', function() {
       		});
     	});
 
-		it('Should not save when all properties are provided correctly',function (done) {
+		  it('Should not save when all properties are provided incorrectly',function (done) {
       		models.User.create({
-      			username: '',
-      			firstName: '',
-      			lastName: '',
+      			username: 'foofo',
+      			firstName: 'Ryan213',
+      			lastName: 'James687',
       			email: 'foo@foo',
-      			password: ''
+      			password: 'passw'
       		})
       		.then(function () {
         		done('Failed'); // Fail if it SAVES
@@ -115,9 +120,42 @@ describe('User Model', function() {
       		.catch(function (e) {
         		done(); 
       		});
-    	});
+      });
 
-    	it('Should save when all properties are provided correctly',function (done) {
+      it('Should not save when all properties are provided incorrectly',function (done) {
+          models.User.create({
+            username: 'foofo', // Username less than 6 chars
+            firstName: 'Ryan213',
+            lastName: 'James687',
+            email: 'foo@foo',
+            password: 'p;@12' // Password less than 5 chars
+          })
+          .then(function () {
+            done('Failed'); // Fail if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+       it('Should not save when all properties are provided incorrectly',function (done) {
+          models.User.create({
+            username: 'qwertyuiopasdfghjklzx', // Username more than 20 chars
+            firstName: '3245213',
+            lastName: '6234987',
+            email: '@invalidemail',  
+            // Password more than 100 chars
+            password: 'qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm'
+          })
+          .then(function () {
+            done('Failed'); // Fail if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+      it('Should save when all properties are provided correctly',function (done) {
       		models.User.create({
       			username: 'LiftOffBr0',
       			firstName: 'Ryan',
@@ -131,29 +169,7 @@ describe('User Model', function() {
       		.catch(function (e) {
         		done(); 
       		});
-    	});
+      });
+
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
