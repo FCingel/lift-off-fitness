@@ -124,7 +124,7 @@ describe('User Model', function() {
 
       it('Should not save when all properties are provided incorrectly',function (done) {
           models.User.create({
-            username: 'foofo', // Username less than 6 chars
+            username: 'foo', // Username less than 4 chars
             firstName: 'Ryan213',
             lastName: 'James687',
             email: 'foo@foo',

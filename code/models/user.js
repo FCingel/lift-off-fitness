@@ -1,4 +1,7 @@
 'use strict';
+const Sequelize = require('sequelize');
+const bcrypt = require('bcrypt-nodejs');
+
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     username: {
@@ -7,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         notEmpty: true,
         isAlphanumeric: true,
-        len: [6,20]
+        len: [4,20]
       }
     },
     firstName: {
@@ -49,5 +52,15 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
+  User.beforeCreate((User) =>
+    new sequelize.Promise((resolve) => {
+      bcrypt.hash(User.password, null, null, (err, hashedPassword) => {
+        resolve(hashedPassword);
+      });
+    }).then((hashedPw) => {
+      User.password = hashedPw;
+    })
+  );
   return User;
 };

@@ -1,4 +1,7 @@
 var express = require('express');
+// const passport = require('../middlewares/authentication');
+// const Redirect = require('../middlewares/redirect');
+
 var router = express.Router();
 var models = require('../models');
 
