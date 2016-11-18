@@ -16,11 +16,11 @@
     "chai-http": "^3.0.0",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
-    "mocha": "^3.0.2",
-    "nodemon": "^1.10.2",
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pg": "^6.1.0",
-    "sequelize": "^3.24.4"
+    "sequelize": "^3.26.0"
   }
 }

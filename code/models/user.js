@@ -44,6 +44,12 @@ module.exports = function(sequelize, DataTypes) {
         notEmpty: true,
         len: [6,100]
       }
+    },
+    fitness_goal: {
+      type: DataTypes.TEXT,
+      validate: {
+        len: [0,140]
+      }
     }
   }, {
     classMethods: {
