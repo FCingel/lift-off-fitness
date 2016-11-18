@@ -106,13 +106,16 @@ describe('User Model', function() {
       		});
     	});
 
-		  it('Should not save when all properties are provided incorrectly',function (done) {
+		  it('Should not save when all properties are provided incorrectly (testing all invalid inputs)',function (done) {
       		models.User.create({
       			username: 'foofo',
       			firstName: 'Ryan213',
       			lastName: 'James687',
       			email: 'foo@foo',
-      			password: 'passw'
+      			password: 'passw',
+            // fitness_goal should not exceed 140 characters
+            fitness_goal: 'This is a test of the fitness_goal that should not save if there are too many characters. The current limit is 140 characters for this text. '
+
       		})
       		.then(function () {
         		done('Failed'); // Fail if it SAVES
@@ -122,13 +125,15 @@ describe('User Model', function() {
       		});
       });
 
-      it('Should not save when all properties are provided incorrectly',function (done) {
+      it('Should not save when all properties are provided incorrectly (less than length validations)',function (done) {
           models.User.create({
-            username: 'foo', // Username less than 4 chars
+            username: 'foo', // username less than 4 chars
             firstName: 'Ryan213',
             lastName: 'James687',
             email: 'foo@foo',
-            password: 'p;@12' // Password less than 5 chars
+            password: 'p;@12', // password less than 5 chars
+            // fitness_goal should not exceed 140 characters
+            fitness_goal: 'This is a test of the fitness_goal that should not save if there are too many characters. The current limit is 140 characters for this text. '
           })
           .then(function () {
             done('Failed'); // Fail if it SAVES
@@ -138,14 +143,16 @@ describe('User Model', function() {
           });
       });
 
-       it('Should not save when all properties are provided incorrectly',function (done) {
+       it('Should not save when all properties are provided incorrectly (greater than length validations)',function (done) {
           models.User.create({
-            username: 'qwertyuiopasdfghjklzx', // Username more than 20 chars
+            username: 'qwertyuiopasdfghjklzx', // username more than 20 chars
             firstName: '3245213',
             lastName: '6234987',
             email: '@invalidemail',  
-            // Password more than 100 chars
-            password: 'qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm'
+            // password more than 100 chars
+            password: 'qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm',
+            // fitness_goal should not exceed 140 characters
+            fitness_goal: 'This is a test of the fitness_goal that should not save if there are too many characters. The current limit is 140 characters for this text. '
           })
           .then(function () {
             done('Failed'); // Fail if it SAVES
@@ -155,13 +162,14 @@ describe('User Model', function() {
           });
       });
 
-      it('Should save when all properties are provided correctly',function (done) {
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
       		models.User.create({
       			username: 'LiftOffBr0',
       			firstName: 'Ryan',
       			lastName: 'James',
       			email: 'foo@foo.com',
-      			password: 'password'
+      			password: 'password',
+            fitness_goal: 'This is a test of the fitness_goal that should save if the limit has not exceeded for this test.'
       		})
       		.then(function () {
         		done(); // Pass if it SAVES
