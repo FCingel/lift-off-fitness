@@ -1,6 +1,6 @@
 <div class="row">
 <div class="col-xs-12">
-<h1><strong>Users</strong></h1>
+<center><h1><strong>Leaderboards</strong></h1></center>
 </div>
 </div>
 
@@ -8,10 +8,16 @@
 {{#each users}}
 <div class="row">
   <div class="col-xs-12">
-<table>
-  <tr><h2><u>Username:</u> {{username}}</h2></tr>
-    <tr><h2><u>Bench</u> {{stats}}</h2></tr>
-  </table>
+<table style = "width: 100%">
+  <tr>
+    <td><h4>Usernames</h4></td>
+    <td><h4>Bench Press stats</h4></td>
+  </tr>
+  <tr>
+    <td> {{username}}</td>
+    <td> {{bench_press}}</td>
+  </tr>
+</table>
   <hr />
   </div>
 </div>
