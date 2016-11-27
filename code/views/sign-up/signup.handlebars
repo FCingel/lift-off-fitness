@@ -1,9 +1,11 @@
 <div class="row">
-<div class="col-xs-12">
+
+<div class="col-xs-6 col-centered form">
+
+<div>
 <h1>Create an account</h1>
 </div>
 
-<div class="col-xs-12">
 {{#if errors}}
   <h3>Errors occured</h3>
   {{#each errors}}
@@ -15,27 +17,26 @@
 
   <form name="create-post" action="/sign-up" method="post">
   <div class="form-group">
-    <label>Username &nbsp;</label>
-    <input type="text" class="form-control" name="username" placeholder="Username">
+    <label>Username</label>
+    <input type="text" class="form-control" name="username" placeholder="Username" pattern=".[a-zA-Z0-9]{3,20}" title="Username must be a combination of 4-20 letters and numbers" required>
   </div>
   <div class="form-group">
     <label>First Name</label>
-    <input type="text" class="form-control" name="firstName" placeholder="First Name">
+    <input type="text" class="form-control" name="firstName" placeholder="First Name" pattern=".[a-zA-Z]{,30}" title="First name can only be up to 30 letters" required>
   </div>
   <div class="form-group">
     <label>Last Name</label>
-    <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+    <input type="text" class="form-control" name="lastName" placeholder="Last Name" pattern=".[a-zA-Z]{,30}" title="Last name can only be up to 30 letters" required>
   </div>
   <div class="form-group">
-    <label>Email &emsp;&emsp;</label>
-    <input type="text" class="form-control" name="email" placeholder="Email">
+    <label>Email</label>
+    <input type="text" class="form-control" name="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,3}$" title="Must be a valid email" required>
   </div>
   <div class="form-group">
     <label>Password</label>
-    <input type="password" class="form-control" name="password" placeholder="Password">
+    <input type="password" minLength=6 class="form-control" name="password" placeholder="Password" pattern="{6, 100}" title="Password must be at least 6 characters" required>
   </div>
-  
-  <button type="submit" class="btn btn-primary">Sign Up</button>
+  <div class="submit"> <button type="submit" class="btn btn-info btn-submit">Sign Up</button> </div>
   </form>
 </div>
 </div>

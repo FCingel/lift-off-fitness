@@ -18,7 +18,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         notEmpty: true,
-        isAlpha: true
+        isAlpha: true,
+        len: [1, 30]
       }
     },
     lastName: {
@@ -26,7 +27,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         notEmpty: true,
-        isAlpha: true
+        isAlpha: true,
+        len: [1, 30]
       }
     },
     email: {
@@ -34,7 +36,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         notEmpty: true,
-        isEmail: true
+        isEmail: true,
+        len: [1, 100]
       }
     },
     password: {

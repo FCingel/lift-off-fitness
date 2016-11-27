@@ -1,0 +1,38 @@
+.navbar {
+	background-color: #4090cb;
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	/*position: fixed;*/
+	border-radius: 0;
+}
+
+.navbar a {
+	color: white;
+}
+
+#navbar-link {
+	text-decoration: none;
+	text-align: left;
+	position: relative;
+	top: 2px;
+
+	/*Temporary. Messes up bootstrap resizing*/
+	margin-right: 65%;
+}
+
+.col-centered {
+	float: none;
+	margin: 0 auto;
+}
+
+.form {
+	background-color: #ebf3f9;
+	padding: 20px;
+	margin-top: 65px;
+	border-radius: 4px;
+}
+
+.submit {
+	text-align: right;
+}
