@@ -8,6 +8,9 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+  <!-- Custom css -->
+  <link href="http://localhost:8000/css/styles.css" rel="stylesheet">
+
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
@@ -15,16 +18,11 @@
 <body>
 <div class="container-fluid" >
   <div class="row">
-    <div class="col-xs-12">
-    <center>
-      <h1>
-      <a href="/home" ><strong>Placeholder Menu Bar</a></strong>
-      <!-- style="color: white; background-color: #2f6ba1; text-decoration: none" -->
-      <a class="btn btn-lg btn-primary" href="/sign-in" role="button">Sign In</a>
-      <a class="btn btn-lg btn-primary" href="/sign-up" role="button">Sign Up</a>
-      <a class="btn btn-lg btn-primary" href="/users" role="button">List of Users</a>
-      </h1>
-    </center>
+    <div class="col-xs-12 navbar">
+      <a id="navbar-link" href="/home"><strong>Lift-Off Fitness</a></strong>
+      <a class="btn btn-md btn-primary" href="/sign-in" role="button">Sign In</a>
+      <a class="btn btn-md btn-primary" href="/sign-up" role="button">Sign Up</a>
+      <a class="btn btn-md btn-primary" href="/users" role="button">Users</a>
     </div>
   </div>
   {{{ body }}}
@@ -34,7 +32,3 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
