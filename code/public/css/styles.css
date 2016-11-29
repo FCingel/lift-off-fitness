@@ -4,6 +4,7 @@
 	text-align: center;
 	font-size: 30px;
 	/*position: fixed;*/
+	position: relative;
 	border-radius: 0;
 }
 
@@ -35,4 +36,17 @@
 
 .submit {
 	text-align: right;
+}
+
+.sidebar{
+    position: absolute;
+		z-index: -1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    text-align: center;
+    font-family:"Courier New", Courier, monospace;
+    color: white;
+    background-color: #70456c;
 }
