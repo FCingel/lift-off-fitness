@@ -1,12 +1,83 @@
-<div class = "sidebar">
-<<<<<<< HEAD
-  <h3>Sidebar </h3>
-    <p> Profile </p>
+
+ <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/profile">Profile</a>
+    <a href="#">Settings</a>
+    <a href="#">Friends</a>
+    <a href="#">Logout</a>
 </div>
-<div>
-  <div>
-    <img src="blank_male.png">
-  </div>
-=======
->>>>>>> d14692a3ba6ef5134088c1d75fee131fb06c39ce
+
+<!-- Use any element to open the sidenav -->
+<h1><span class="glyphicon glyphicon-list" onclick="openNav()"> Menu</span></h1> 
+
+<center><h1><u>Account Details</u></h1></center>
+
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+<div class="row">
+
+{{#each stats}}
+
+<div class="container">
+<div class="row">
+    <div id="main">
+
+<div class="col-xs-8 col-centered form">
+    <div>  
+        <h1><u>Username:</u> {{username}}<h1>
+    </div>
+
+        <form name="edit-stats" method="PUT" action="/profile">
+            <div class="form-group">
+                <label>Bench Press: {{bench_press}}</label>
+                <input type="number" class="form-control" name="bench_press" placeholder="Update bench press">
+            </div>
+            <div class="form-group">
+                <label>Military Press: {{military_press}}</label>
+                <input type="number" class="form-control" name="military_press" placeholder="Update military press">
+            </div>
+            <div class="form-group">
+                <label>Squat: {{squat}}</label>
+                <input type="number" class="form-control" name="squat" placeholder="Update squat">
+            </div>
+            <div class="form-group">
+                <label>Deadlift: {{deadlift}}</label>
+                <input type="number" class="form-control" name="deadlift" placeholder="Update deadlift">
+            </div>
+            <div class="form-group">
+                <label>Height: {{height}}</label>
+                <input type="number" class="form-control" name="height" placeholder="Update weight">
+            </div>
+            <div class="form-group">
+                <label>Weight: {{weight}}</label>
+                <input type="number" class="form-control" name="weight" placeholder="Update height">
+            </div>
+                <div class="submit"><button type="submit" class="btn btn-info btn-submit">Update stats</button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <center><div><button type="submit" action="/home" class="btn btn-danger">Delete Account</button></center></div>
+    </div>
 </div>
+{{/each}}
+</div>
+</div>
+
+
+<script>
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+</script> 
+

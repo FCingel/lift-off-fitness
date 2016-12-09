@@ -213,6 +213,143 @@ describe('User Model', function() {
           });
       });
 
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'HandsomeBanana',
+            firstName: 'Ayden',
+            lastName: 'James',
+            email: 'aydenj@email.com',
+            password: 'worldhello',
+            fitness_goal: 'I want to lose 50 pounds!'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });      
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'DollFace21',
+            firstName: 'Fiana',
+            lastName: 'Crystal',
+            email: 'dianac@email.com',
+            password: 'helloworld',
+            fitness_goal: 'I want to get my beach body back!!!'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'PrettyPotato',
+            firstName: 'Christina',
+            lastName: 'Renee',
+            email: 'christinar@email.com',
+            password: 'fitnessfanatic1',
+            fitness_goal: 'I want to be healthy and strong.'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'Beautylicious',
+            firstName: 'Alana',
+            lastName: 'Spencer',
+            email: 'alanas@email.com',
+            password: 'gymfreak1',
+            fitness_goal: 'I want to gain some weight!!!'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'Barbie1995',
+            firstName: 'JessicaO',
+            lastName: 'Ortiz',
+            email: 'jessicao@email.com',
+            password: 'allaboutthegains',
+            fitness_goal: 'Training to join the marines.'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'CaptainAwesome',
+            firstName: 'Dwight',
+            lastName: 'Grimes',
+            email: 'dwightg@email.com',
+            password: 'strongestofthemall',
+            fitness_goal: 'I want to be the strongest and most fearful.'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });    
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'OptimusPrimeRib',
+            firstName: 'Carl',
+            lastName: 'Junior',
+            email: 'carlj@email.com',
+            password: 'transformerguy',
+            fitness_goal: 'I want to be the strongest and most fearful.'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+      
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'AngryMom',
+            firstName: 'Simone',
+            lastName: 'Garden',
+            email: 'simoneg@email.com',
+            password: 'mypassword',
+            fitness_goal: 'I want to be the strongest and most fearful.'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+                                       
 
     });
 });

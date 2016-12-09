@@ -42,7 +42,7 @@ router.post('/', function(req,res) {
     res.redirect('/users')
   }).catch(function (e) {
     res.render('sign-up/signup', {errors: e.errors});
-    // res.json(e);
+    //res.json(e);
   })
 });
 

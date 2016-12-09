@@ -35,16 +35,54 @@ router.use(function timeLog(req, res, next) {
 });
 
 
-// define the root users route
+// define the root profile route
 router.get('/', function(req, res) {
-  models.User.findAll({})
-    .then(function (users) {
-      if (users != null) {
-        res.render('profile/profile', {users: users});
+  models.Stats.findAll({
+    where: {
+      id: 1
+    }
+  })
+    .then(function (stats) {
+      if (stats != null) {
+        res.render('profile/profile', {stats: stats});
       } else {
-        res.send('users page not found');
+        res.send('profile page not found');
       }
     });
 });
+
+// Display the Form
+router.get('/profile', function (req,res) {
+  res.render('profile/profile');
+});
+
+router.put('/', function(req,res) {
+  console.log(req.body);
+  models.Stats.update({
+    bench_press: req.body.bench_press,
+    military_press: req.body.military_press,
+    squat: req.body.squat,
+    deadlift: req.body.deadlift,
+    height: req.body.height,
+    weight: req.body.weight
+  }).then(function (profile) {
+    //SHOULD UPDATE PROFILE 
+    res.redirect('/profile')
+  }).catch(function (e) {
+    res.render('profile', {errors: e.errors});
+    //res.json(e);
+  })
+});
+
+router.delete('/', function(req, res){
+  models.Stats.destroy({
+    where: {
+      id: 1
+    }
+  })
+
+});
+
+
 
 module.exports = router;
