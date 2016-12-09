@@ -43,6 +43,45 @@
 	text-align: right;
 }
 
+.table-title {
+	background-color: #7c003f;
+	color: white;
+}
+
+.title-content {
+	text-decoration: none;
+	color: white;
+}
+
+.title-content:hover {
+	color: #be0a66;
+}
+
+.faded {
+	color: white;
+	pointer-events: none;
+
+}
+
+a {
+	text-decoration: none;
+}
+
+table {
+	text-align: center;
+	justify-content: center;
+}
+
+th {
+	text-align: center;
+	width: 10%;
+}
+
+.sorted {
+	background-color: #99004d;
+	color: white;
+}
+
 .sidebar{
     position: absolute;
 	z-index: -1;

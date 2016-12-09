@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models');
+var models = require('../../models');
 var sequelize = require('sequelize');
 
 // middleware that is specific to this router
@@ -10,15 +10,14 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 
-//main leaderboard page
-//sorts table by username
+//squat leaderboard page
 router.get('/', function(req, res) {
   models.Stats.findAll({
-    order: '"username" ASC'
+    order: '"squat" DESC'
   })
     .then(function (stats) {
       if (stats != null) {
-        res.render('leaderboard/leaderboard', {stats: stats});
+        res.render('leaderboard/squat', {stats: stats});
       } else {
         res.send('stats page not found');
       }
