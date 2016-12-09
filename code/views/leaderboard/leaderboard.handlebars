@@ -1,24 +1,35 @@
 <div class="row">
-<div class="col-xs-12">
+<div class="col-xs-6 col-centered">
 <center><h1><strong>Leaderboards</strong></h1></center>
-</div>
-</div>
+<!-- </div>
+</div> -->
 
 <!-- Prints out information for each User -->
-{{#each users}}
-<div class="row">
-  <div class="col-xs-12">
-<table style = "width: 100%">
-  <tr>
-    <td><h4>Usernames</h4></td>
-    <td><h4>Bench Press stats</h4></td>
-  </tr>
-  <tr>
-    <td> {{username}}</td>
-    <td> {{bench_press}}</td>
-  </tr>
-</table>
-  <hr />
-  </div>
+
+<!-- <div class="row">
+  <div class="col-xs-12"> -->
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><h4>Username</h4></th>
+      <th><h4>Bench Press</h4></th>
+      <th><h4>Military Press</h4></th>
+      <th><h4>Squat</h4></th>
+      <th><h4>Deadlift</h4></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each stats}}
+    <tr>
+      <td> {{username}}</td>
+      <td> {{bench_press}}</td>
+      <td> {{military_press}}</td>
+      <td> {{squat}}</td>
+      <td> {{deadlift}}</td>
+
+
+    </tr>
+    {{/each}}
+  </tbody>
 </div>
-{{/each}}

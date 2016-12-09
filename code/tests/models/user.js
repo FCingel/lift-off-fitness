@@ -164,12 +164,12 @@ describe('User Model', function() {
 
       it('Should save when all properties are provided correctly (within validations)',function (done) {
       		models.User.create({
-      			username: 'LiftOffBr0',
+      			username: 'RyanB',
       			firstName: 'Ryan',
       			lastName: 'James',
-      			email: 'foo@foo.com',
+      			email: 'ryanb@email.com',
       			password: 'password',
-            fitness_goal: 'This is a test of the fitness_goal that should save if the limit has not exceeded for this test.'
+            fitness_goal: 'I like to lift!!'
       		})
       		.then(function () {
         		done(); // Pass if it SAVES
@@ -178,6 +178,41 @@ describe('User Model', function() {
         		done(); 
       		});
       });
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'FrankieC',
+            firstName: 'Frank',
+            lastName: 'Cingel',
+            email: 'frankc@email.com',
+            password: 'drowssap',
+            fitness_goal: 'I wanna get ripped!'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'EdouardM',
+            firstName: 'Edouard',
+            lastName: 'Michel',
+            email: 'edouardm@email.com',
+            password: 'mypassword',
+            fitness_goal: 'I wanna get the ladies!'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
 
     });
 });

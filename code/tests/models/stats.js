@@ -37,7 +37,7 @@ describe('Stats Model', function() {
 
     it('Should save when all properties are provided correctly',function (done) {
       models.Stats.create({
-      	username: 'LiftOffBr0',
+      	username: 'RyanB',
     		height: '70',
     		weight: '165',
   			gender: 'Female',
@@ -54,6 +54,45 @@ describe('Stats Model', function() {
           done(); 
         });
     });
+    it('Should save when all statistics are provided correctly',function (done) {
+      models.Stats.create({
+        username: 'FrankieC',
+        height: '90',
+        weight: '205',
+        gender: 'Male',
+        gym: 'Planet Fitness',
+        bench_press: '315',
+        military_press: '155',
+        squat: '400',
+        deadlift: '450'
+      })
+        .then(function () {
+          done(); // Pass if it SAVES
+        })
+        .catch(function (e) {
+          done(); 
+        });
+    });
+    it('Should save when all statistics are provided correctly',function (done) {
+      models.Stats.create({
+        username: 'EduoardM',
+        height: '95',
+        weight: '188',
+        gender: 'Male',
+        gym: 'Ballys Total Fitness',
+        bench_press: '195',
+        military_press: '170',
+        squat: '300',
+        deadlift: '415'
+      })
+        .then(function () {
+          done(); // Pass if it SAVES
+        })
+        .catch(function (e) {
+          done(); 
+        });
+    });
+
 
   });
 });
