@@ -1,26 +1,72 @@
-const express = require('express');
-const app = express();
-const exphbs = require('express-handlebars');
-var bodyParser = require('body-parser');
+// const express = require('express');
+// const app = express();
+// const exphbs = require('express-handlebars');
+// var bodyParser = require('body-parser');
 
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+
+// app.engine('handlebars', exphbs({
+// 	layoutsDir: './views/layouts',
+// 	defaultLayout: 'main'
+// }));
+
+// app.use(express.static('public'));
+
+// app.set('view engine', 'handlebars');
+// app.set('views', `${__dirname}/views/`);
+
+
+
+
+
+
+
+
+
+
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const exphbs = require('express-handlebars');
+const express = require('express');
+const expressSession = require('express-session');
+const flash = require('connect-flash');
+const methodOverride = require('method-override');
+const models = require('./models/');
+const passport = require('./middlewares/authentication');
+const viewHelpers = require('./middlewares/viewHelpers')
+
+const app = express();
+app.use(methodOverride('_method'));
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(expressSession(({ secret: 'keyboard cat', resave: false, saveUninitialized: true })));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static('./public'));
 
 app.engine('handlebars', exphbs({
-	layoutsDir: './views/layouts',
-	defaultLayout: 'main'
+  layoutsDir: './views/layouts',
+  defaultLayout: 'main',
 }));
-
-app.use(express.static('public'));
-
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views/`);
 
+app.use(viewHelpers.register());
 
+// app.use(require('./controllers/'));
 
-app.get('/', function (req, res) {
-   res.redirect('/home');
+models.sequelize.sync().then(() => {
+  app.listen(8000);
 });
+
+
+
+// app.get('/', function (req, res) {
+//    res.redirect('/home');
+// });
 
 // Load and mount the home controller
 const home = require('./controllers/home');
@@ -65,5 +111,5 @@ const users = require('./controllers/users');
 app.use('/users', users);
 
 
-module.exports = app;
-app.listen(8000);
+// module.exports = app;
+// app.listen(8000);

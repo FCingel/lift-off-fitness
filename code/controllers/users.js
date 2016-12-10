@@ -22,4 +22,11 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/:username', function (req, res) {
+  models.User.findOne({where: {username: req.params.username}})
+    .then(function (user) {
+      res.send(user);
+    });
+});
+
 module.exports = router;

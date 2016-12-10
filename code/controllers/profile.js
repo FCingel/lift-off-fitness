@@ -21,7 +21,6 @@ router.get('/profile', function(req,res){
   res.send('profile/profile');
 };
 
-
 module.exports = router;*/
 var express = require('express');
 var router = express.Router();
@@ -33,7 +32,6 @@ router.use(function timeLog(req, res, next) {
   console.log('user Controller :: Time: ', Date.now());
   next();
 });
-
 
 // define the root profile route
 router.get('/', function(req, res) {
@@ -51,27 +49,39 @@ router.get('/', function(req, res) {
     });
 });
 
+
+
 // Display the Form
 router.get('/profile', function (req,res) {
   res.render('profile/profile');
 });
 
-router.put('/', function(req,res) {
-  console.log(req.body);
-  models.Stats.update({
-    bench_press: req.body.bench_press,
-    military_press: req.body.military_press,
-    squat: req.body.squat,
-    deadlift: req.body.deadlift,
-    height: req.body.height,
-    weight: req.body.weight
-  }).then(function (profile) {
-    //SHOULD UPDATE PROFILE 
-    res.redirect('/profile')
-  }).catch(function (e) {
-    res.render('profile', {errors: e.errors});
-    //res.json(e);
-  })
+
+// router.put('/', function(req,res) {
+//   console.log(req.body);
+//   models.Stats.update({
+//     bench_press: req.body.bench_press,
+//     military_press: req.body.military_press,
+//     squat: req.body.squat,
+//     deadlift: req.body.deadlift,
+//     height: req.body.height,
+//     weight: req.body.weight
+//   }).then(function (profile) {
+//     //SHOULD UPDATE PROFILE 
+//     res.redirect('/profile')
+//   }).catch(function (e) {
+//     res.render('profile', {errors: e.errors});
+//     //res.json(e);
+//   })
+// });
+
+
+
+router.get('/:username', function (req, res) {
+  models.User.findOne({where: {username: req.params.username}})
+    .then(function (user) {
+      res.send(user);
+    });
 });
 
 router.delete('/', function(req, res){
@@ -84,5 +94,12 @@ router.delete('/', function(req, res){
 });
 
 
-
 module.exports = router;
+
+
+
+
+
+
+
+
