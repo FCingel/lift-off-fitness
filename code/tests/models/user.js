@@ -114,7 +114,15 @@ describe('User Model', function() {
       			email: 'foo@foo',
       			password: 'passw',
             // fitness_goal should not exceed 140 characters
-            fitness_goal: 'This is a test of the fitness_goal that should not save if there are too many characters. The current limit is 140 characters for this text. '
+            fitness_goal: 'This is a test of the fitness_goal that should not save if there are too many characters. The current limit is 140 characters for this text. ',
+            height: 'foo',
+            weight: 'foo',
+            gender: '23',
+            gym: '',
+            bench_press: 'foo',
+            military_press: 'foo',
+            squat: 'foo',
+            deadlift: 'foo'
 
       		})
       		.then(function () {
@@ -133,7 +141,15 @@ describe('User Model', function() {
             email: 'foo@foo',
             password: 'p;@12', // password less than 5 chars
             // fitness_goal should not exceed 140 characters
-            fitness_goal: 'This is a test of the fitness_goal that should not save if there are too many characters. The current limit is 140 characters for this text. '
+            fitness_goal: 'This is a test of the fitness_goal that should not save if there are too many characters. The current limit is 140 characters for this text. ',
+            height: 'foo',
+            weight: 'foo',
+            gender: '23',
+            gym: '',
+            bench_press: 'foo',
+            military_press: 'foo',
+            squat: 'foo',
+            deadlift: 'foo'
           })
           .then(function () {
             done('Failed'); // Fail if it SAVES
@@ -152,7 +168,15 @@ describe('User Model', function() {
             // password more than 100 chars
             password: 'qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm',
             // fitness_goal should not exceed 140 characters
-            fitness_goal: 'This is a test of the fitness_goal that should not save if there are too many characters. The current limit is 140 characters for this text. '
+            fitness_goal: 'This is a test of the fitness_goal that should not save if there are too many characters. The current limit is 140 characters for this text. ',
+            height: 'foo',
+            weight: 'foo',
+            gender: '23',
+            gym: '',
+            bench_press: 'foo',
+            military_press: 'foo',
+            squat: 'foo',
+            deadlift: 'foo'
           })
           .then(function () {
             done('Failed'); // Fail if it SAVES
@@ -166,10 +190,18 @@ describe('User Model', function() {
       		models.User.create({
       			username: 'RyanB',
       			firstName: 'Ryan',
-      			lastName: 'James',
+      			lastName: 'Bassit',
       			email: 'ryanb@email.com',
       			password: 'password',
-            fitness_goal: 'I like to lift!!'
+            fitness_goal: 'I like to lift, its good for the mind and the body!!',
+            height: '70',
+            weight: '165',
+            gender: 'Male',
+            gym: 'Blink Fitness',
+            bench_press: '225',
+            military_press: '160',
+            squat: '315',
+            deadlift: '405'
       		})
       		.then(function () {
         		done(); // Pass if it SAVES
@@ -186,7 +218,15 @@ describe('User Model', function() {
             lastName: 'Cingel',
             email: 'frankc@email.com',
             password: 'drowssap',
-            fitness_goal: 'I wanna get ripped!'
+            fitness_goal: 'I wanna get ripped!',
+            height: '90',
+            weight: '205',
+            gender: 'Male',
+            gym: 'Planet Fitness',
+            bench_press: '315',
+            military_press: '155',
+            squat: '400',
+            deadlift: '450'
           })
           .then(function () {
             done(); // Pass if it SAVES
@@ -203,7 +243,15 @@ describe('User Model', function() {
             lastName: 'Michel',
             email: 'edouardm@email.com',
             password: 'mypassword',
-            fitness_goal: 'I wanna get the ladies!'
+            fitness_goal: 'I wanna get the ladies!',
+            height: '95',
+            weight: '188',
+            gender: 'Male',
+            gym: 'Ballys Total Fitness',
+            bench_press: '195',
+            military_press: '170',
+            squat: '300',
+            deadlift: '415'
           })
           .then(function () {
             done(); // Pass if it SAVES
@@ -220,7 +268,15 @@ describe('User Model', function() {
             lastName: 'James',
             email: 'aydenj@email.com',
             password: 'worldhello',
-            fitness_goal: 'I want to lose 50 pounds!'
+            fitness_goal: 'I want to lose 50 pounds!',
+            height: '93',
+            weight: '240',
+            gender: 'Male',
+            gym: 'Crunch',
+            bench_press: '160',
+            military_press: '135',
+            squat: '240',
+            deadlift: '265'
           })
           .then(function () {
             done(); // Pass if it SAVES
@@ -233,11 +289,19 @@ describe('User Model', function() {
       it('Should save when all properties are provided correctly (within validations)',function (done) {
           models.User.create({
             username: 'DollFace21',
-            firstName: 'Fiana',
+            firstName: 'Fiona',
             lastName: 'Crystal',
             email: 'dianac@email.com',
             password: 'helloworld',
-            fitness_goal: 'I want to get my beach body back!!!'
+            fitness_goal: 'I want to get my beach body back!!!',
+            height: '55',
+            weight: '136',
+            gender: 'Female',
+            gym: 'Blink Fitness',
+            bench_press: '65',
+            military_press: '35',
+            squat: '135',
+            deadlift: '95'
           })
           .then(function () {
             done(); // Pass if it SAVES
@@ -254,7 +318,15 @@ describe('User Model', function() {
             lastName: 'Renee',
             email: 'christinar@email.com',
             password: 'fitnessfanatic1',
-            fitness_goal: 'I want to be healthy and strong.'
+            fitness_goal: 'I want to be healthy and strong.',
+            height: '63',
+            weight: '134',
+            gender: 'Female',
+            gym: 'Planet Fitness',
+            bench_press: '80',
+            military_press: '55',
+            squat: '165',
+            deadlift: '140'
           })
           .then(function () {
             done(); // Pass if it SAVES
@@ -271,7 +343,15 @@ describe('User Model', function() {
             lastName: 'Spencer',
             email: 'alanas@email.com',
             password: 'gymfreak1',
-            fitness_goal: 'I want to gain some weight!!!'
+            fitness_goal: 'I want to gain some weight!!!',
+            height: '72',
+            weight: '123',
+            gender: 'Female',
+            gym: 'Ballys Total Fitness',
+            bench_press: '45',
+            military_press: '25',
+            squat: '55',
+            deadlift: '70'
           })
           .then(function () {
             done(); // Pass if it SAVES
@@ -284,11 +364,19 @@ describe('User Model', function() {
       it('Should save when all properties are provided correctly (within validations)',function (done) {
           models.User.create({
             username: 'Barbie1995',
-            firstName: 'JessicaO',
+            firstName: 'Jessie',
             lastName: 'Ortiz',
             email: 'jessicao@email.com',
             password: 'allaboutthegains',
-            fitness_goal: 'Training to join the marines.'
+            fitness_goal: 'Training to join the marines.',
+            height: '78',
+            weight: '160',
+            gender: 'Female',
+            gym: 'Crunch',
+            bench_press: '140',
+            military_press: '100',
+            squat: '225',
+            deadlift: '225'
           })
           .then(function () {
             done(); // Pass if it SAVES
@@ -305,7 +393,15 @@ describe('User Model', function() {
             lastName: 'Grimes',
             email: 'dwightg@email.com',
             password: 'strongestofthemall',
-            fitness_goal: 'I want to be the strongest and most fearful.'
+            fitness_goal: 'I want to be the strongest and everyone should be intimidated by me!!!!!!!!!!',
+            height: '86',
+            weight: '172',
+            gender: 'Male',
+            gym: 'Retro Fitness',
+            bench_press: '170',
+            military_press: '300',
+            squat: '510',
+            deadlift: '675'
           })
           .then(function () {
             done(); // Pass if it SAVES
@@ -322,7 +418,15 @@ describe('User Model', function() {
             lastName: 'Junior',
             email: 'carlj@email.com',
             password: 'transformerguy',
-            fitness_goal: 'I want to be the strongest and most fearful.'
+            fitness_goal: 'I like to eat weights for breakfast.',
+            height: '95',
+            weight: '275',
+            gender: 'Male',
+            gym: 'Retro Fitness',
+            bench_press: '335',
+            military_press: '200',
+            squat: '180',
+            deadlift: '275'
           })
           .then(function () {
             done(); // Pass if it SAVES
@@ -339,7 +443,15 @@ describe('User Model', function() {
             lastName: 'Garden',
             email: 'simoneg@email.com',
             password: 'mypassword',
-            fitness_goal: 'I want to be the strongest and most fearful.'
+            fitness_goal: 'All I gotta say is... dont mess with me.',
+            height: '67',
+            weight: '171',
+            gender: 'Female',
+            gym: 'Ballys Total Fitness',
+            bench_press: '230',
+            military_press: '130',
+            squat: '205',
+            deadlift: '210'
           })
           .then(function () {
             done(); // Pass if it SAVES

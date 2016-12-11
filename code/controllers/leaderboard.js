@@ -6,21 +6,21 @@ var sequelize = require('sequelize');
 // middleware that is specific to this router
 // applies to all routes defined in this controller
 router.use(function timeLog(req, res, next) {
-  console.log('stats Controller :: Time: ', Date.now());
+  console.log('leaderboard Controller :: Time: ', Date.now());
   next();
 });
 
 //main leaderboard page
 //sorts table by username
 router.get('/', function(req, res) {
-  models.Stats.findAll({
+  models.User.findAll({
     order: '"username" ASC'
   })
-    .then(function (stats) {
-      if (stats != null) {
-        res.render('leaderboard/leaderboard', {stats: stats});
+    .then(function (users) {
+      if (users != null) {
+        res.render('leaderboard/leaderboard', {users: users});
       } else {
-        res.send('stats page not found');
+        res.send('users page not found');
       }
     });
 });

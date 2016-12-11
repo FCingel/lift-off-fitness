@@ -153,8 +153,32 @@ img {
    text-align: center;
 }
 
-.panel-attribute{
+.panel-stats{
     font-size: 20px;
     background-color: #7c003f;
     color: white;
+}
+
+
+.panel-stats{
+    font-size: 20px;
+    background-color: #7c003f;
+    color: white;
+}
+
+.panel-fitness{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #7c003f;
+}
+.panel-fitness p{
+    font-weight: normal;
+    color: white;
+}
+
+.image-border{
+    margin-top: 5px; 
+    border-radius: 1%;
 }

@@ -31,4 +31,18 @@ router.get('/:username', function (req, res) {
     });
 });
 
+
+router.get('/:username', function(req, res){
+  models.Stats.findOne({
+    where: {
+      username: req.params.username
+  }})
+  .then(function(stats){
+    res.render('users/single/users', {stats, stats});
+  });
+});
+
+
+
+
 module.exports = router;
