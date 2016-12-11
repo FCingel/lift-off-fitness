@@ -1,30 +1,52 @@
-<div class="row">
-<div class="col-xs-12">
 
-<div class="info-heading"><h1><strong>{{user.username}}</strong></h1>
-    <h3>{{user.firstName}} {{user.lastName}}</h3>
-    <h4>{{user.fitness_goal}}</h4>
-    <div class="col-xs-2">
-    <img src="/images/{{user.username}}.jpg" width="150" height="150"/>
-  </div>
+<!-- {{user.username}} -->
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-11 col-centered">
+    <p class="accountDetails">{{user.username}}</p>
+</div>
 </div>
 </div>
 
-<!-- Prints out information for each User -->
-<!-- {{#each users}} -->
-<div class="row">
-  <span class="col-xs-1"></span>
-  <div class="col-xs-2">
-    <img src="/images/{{username}}.jpg" width="150" height="150"/>
-  </div>
-  <div class="col-xs-9">
-  	<h3><a href="/users/{{username}}" style="text-decoration: none;">{{users.username}}</a><h3>
-  	<h3>{{user.firstName}} {{user.lastName}}</h3>
-  	<h4>{{user.fitness_goal}}</h4>
-<!--   	<h4><u>Email</u>: {{email}}</h4>
-  	<h4><u>Password</u>: {{password}}</h4> -->
-  	<!-- <hr/> -->
-  </div>
-  <span class="row"></span>
+
+<div class="container-fluid">
+    <div class="row">
+
+            <div class="col-xs-6">
+                <div> 
+                    <center><img src="/images/{{user.username}}.jpg" width="300" height="300"></center>
+                    <center>{{user.fitness_goal}}</center>
+                </div>    
+            </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <span class="col-xs-6">
+                    <span class="col-xs-1"></span>
+                    <div class="col-xs-8 list-center">
+                        <div class="panel panel-attribute">
+                        <div class="panel-heading"><strong>Fitness Statistics</strong></div>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Bench Press:</strong>  {{bench_press}}</li>
+                                <li class="list-group-item"><strong>Military Press:</strong>  {{military_press}}</li>
+                                <li class="list-group-item"><strong>Squat:</strong>  {{squat}}</li>
+                                <li class="list-group-item"><strong>Deadlift:</strong>  {{deadlift}}</li>
+                                <li class="list-group-item"><strong>Height:</strong>  {{height}}</li>
+                                <li class="list-group-item"><strong>Weight:</strong>  {{weight}}</li>
+                                <li class="list-group-item"><strong>Gender:</strong>  {{gender}}</li>
+                                <li class="list-group-item"><strong>Gym:</strong>  {{gym}}</li>
+                            </ul>
+                        </div>
+                    </span>
+    <!--                 <div class="submit"><button type="submit" class="btn btn-info btn-submit">Update stats</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+<!--     <div>
+        <center><div><button type="submit" action="/home" class="btn btn-danger">Delete Account</button></center></div>
+    </div> -->
+    </div>
 </div>
-<!-- {{/each}} -->
