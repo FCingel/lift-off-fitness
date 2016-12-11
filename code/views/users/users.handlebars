@@ -1,18 +1,24 @@
 <div class="row">
 <div class="col-xs-12">
-<h1><strong>Users</strong></h1>
+<div class="info-heading"><h1><strong>Spotters</strong></h1>
 </div>
 </div>
 
 <!-- Prints out information for each User -->
 {{#each users}}
 <div class="row">
-  <div class="col-xs-12">
-  	<h2><u>Username:</u> {{username}}<h2>
-  	<h3><u>First:</u> {{firstName}} <u>Last:</u> {{lastName}}</h3>
-  	<h3><u>Email:</u> {{email}}</h3>
-  	<h3><u>Password:</u> {{password}}</h3>
-  	<hr/>
+  <span class="col-xs-1"></span>
+  <div class="col-xs-2">
+    <img src="/images/{{username}}.jpg" width="150" height="150"/>
   </div>
+  <div class="col-xs-9">
+  	<h3><a href="/users/{{username}}" style="text-decoration: none;">{{username}}</a><h3>
+  	<h3>{{firstName}} {{lastName}}</h3>
+  	<h4>{{fitness_goal}}</h4>
+<!--   	<h4><u>Email</u>: {{email}}</h4>
+  	<h4><u>Password</u>: {{password}}</h4> -->
+  	<!-- <hr/> -->
+  </div>
+  <span class="row"></span>
 </div>
 {{/each}}

@@ -1,30 +1,3 @@
-// const express = require('express');
-// const app = express();
-// const exphbs = require('express-handlebars');
-// var bodyParser = require('body-parser');
-
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-
-// app.engine('handlebars', exphbs({
-// 	layoutsDir: './views/layouts',
-// 	defaultLayout: 'main'
-// }));
-
-// app.use(express.static('public'));
-
-// app.set('view engine', 'handlebars');
-// app.set('views', `${__dirname}/views/`);
-
-
-
-
-
-
-
-
-
-
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
@@ -98,6 +71,10 @@ app.use('/leaderboard/squat', leaderboard_squat);
 const leaderboard_deadlift = require('./controllers/leaderboard/deadlift');
 app.use('/leaderboard/deadlift', leaderboard_deadlift);
 
+
+// Load and mount the logout controller
+const logout = require('./controllers/logout');
+app.use('/logout', logout);
 
 
 // Load and mount the users controller

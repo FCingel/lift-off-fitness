@@ -1,116 +1,101 @@
-/*var express = require('express');
-var router = express.Router();
-
-// middleware that is specific to this router
-// applies to all routes defined in this controller
-router.use(function timeLog(req, res, next) {
-  console.log('profile Controller :: Time: ', Date.now());
-  next();
-});
+// var express = require('express');
+// var router = express.Router();
+// var models = require('../models');
+// const Redirect = require('../middlewares/redirect');
 
 
-// define the root profile route
-router.get('/', function(req, res) {
-  res.send('The profile page');
-});
+// // middleware that is specific to this router
+// // applies to all routes defined in this controller
+// router.use(function timeLog(req, res, next) {
+//   console.log('profile Controller :: Time: ', Date.now());
+//   next();
+// });
 
-// define the specific profile route
-// Note: 'slug' is how we refer to document titles in url's
-// For some history checkout: http://stackoverflow.com/a/4230937
-router.get('/profile', function(req,res){
-  res.send('profile/profile');
-};
 
-module.exports = router;*/
-var express = require('express');
+// router.get('/', Redirect.ifLoggedIn('/users/:username'), function(req, res) {
+//   res.render('sign-in/signin', { error: req.flash('error') });
+// });
+
+// //temporarily points to specific profile. Should redirect to signed in user's profile
+// // define the root profile route
+// // router.get('/', function(req, res) {
+// //   models.Stats.findAll({
+// //     where: {
+// //       id: 1
+// //     }
+// //   })
+// //   .then(function (stats) {
+// //       if (stats != null) {
+// //         res.render('profile/profile', {stats: stats});
+// //       } else {
+// //         res.send('profile page not found');
+// //       }
+// //     });
+// // });
+
+
+
+// // // Display the Form
+// // router.get('/profile', function (req,res) {
+// //   res.render('profile/profile');
+// // });
+
+
+
+// router.get('/:username', function (req, res) {
+//   models.User.findOne({where: {username: req.params.username}})
+//     .then(function (user) {
+//       res.send(user);
+//     });
+// });
+
+// // router.delete('/', function(req, res){
+// //   models.Stats.destroy({
+// //     where: {
+// //       id: 1
+// //     }
+// //   })
+
+// // });
+
+
+// module.exports = router;
+
+const express = require('express');
+const Redirect = require('../middlewares/redirect');
 var router = express.Router();
 var models = require('../models');
 
-// middleware that is specific to this router
-// applies to all routes defined in this controller
-router.use(function timeLog(req, res, next) {
-  console.log('profile Controller :: Time: ', Date.now());
-  next();
-});
 
-//define the root profile route
+
+module.exports = {
+  registerRouter() {
+    const router = express.Router();
+
+    router.get('/', Redirect.ifNotLoggedIn(), this.index);
+
+    return router;
+  },
+  index(req, res) {
+    res.render('profile', { user: req.user, success: req.flash('success') });
+  },
+};
+
+// define the root profile route
 router.get('/', function(req, res) {
-  models.Stats.findAll({
-    where: {
-      id: 4
-    }
-  })
-  .then(function (stats) {
-      if (stats != null) {
-        res.render('profile/profile', {stats: stats});
+  models.User.findAll({
+    where: {username: req.params.username}})
+  .then(function (user) {
+      if (user != null) {
+        res.render('users/single/users', {user: user});
       } else {
         res.send('profile page not found');
       }
     });
 });
 
-// router.get('/', function(req, res) {
-//   models.User.findAll({
-//     where: {
-//       id: 4
-//     }
-//   })
-//     .then(function (users) {
-//       if (users != null) {
-//         res.render('profile/profile', {users: users});
-//       } else {
-//         res.send('profile page not found');
-//       }
-//     });
-// });
-
-
-
-// Display the Form
-router.get('/profile', function (req,res) {
-  res.render('profile/profile');
-});
-
-
-// router.put('/', function(req,res) {
-//   console.log(req.body);
-//   models.Stats.update({
-//     bench_press: req.body.bench_press,
-//     military_press: req.body.military_press,
-//     squat: req.body.squat,
-//     deadlift: req.body.deadlift,
-//     height: req.body.height,
-//     weight: req.body.weight
-//   }).then(function (profile) {
-//     //SHOULD UPDATE PROFILE 
-//     res.redirect('/profile')
-//   }).catch(function (e) {
-//     res.render('profile', {errors: e.errors});
-//     //res.json(e);
-//   })
-// });
-
-
-
-router.get('/:username', function (req, res) {
-  models.User.findOne({where: {username: req.params.username}})
-    .then(function (user) {
-      res.send(user);
-    });
-});
-
-router.delete('/', function(req, res){
-  models.Stats.destroy({
-    where: {
-      id: 1
-    }
-  })
-
-});
-
 
 module.exports = router;
-
 
 
 

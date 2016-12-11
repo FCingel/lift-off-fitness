@@ -1,11 +1,12 @@
 .navbar {
-	background-color: #4090cb;
+	background-color: #3aacc7;
 	color: white;
 	text-align: center;
 	font-size: 30px;
 	position: fixed;
 	border-radius: 0;
 	z-index: 10;
+	box-shadow: 0 1px 3px 0 grey;
 }
 
 .navbar a {
@@ -16,9 +17,32 @@
 	text-decoration: none;
 	text-align: left;
 	position: relative;
-	font-size: 25px;
-	margin-top: -4px;
+	font-size: 26px;
+	margin-top: -5px;
 	top: 2px;
+}
+
+.navbar-link:hover {
+	color: #99004d;
+}
+
+.navbar-link:active {
+	color: #7c003f;
+}
+
+.nav-btn {
+	color: #3aacc7;
+	width: 140px;
+	box-shadow: 0px;
+	font-weight: 500;
+}
+
+.nav-btn:hover {
+	color: #99004d;
+}
+
+.nav-btn:active {
+	color: #7c003f;
 }
 
 .main-content {
@@ -32,17 +56,24 @@
 
 .form {
 	background-color: #ebf3f9;
+	color: #7c003f;
 	padding: 20px;
 	margin-top: 65px;
 	margin-bottom: 5%;
-	border-radius: 4px;
+	border-radius: 1px;
+	box-shadow: 0 1px 1px 0 grey;
+
 }
 
 .info-heading {
 	text-align: center;
-	color: #4090cb;
+	color: #3aacc7;
 	font-weight: bold;
 	font-size: 20px;
+}
+
+.info-heading h1 {
+	color: #7c003f;
 }
 
 .submit {
@@ -69,13 +100,10 @@
 
 }
 
-a {
-	text-decoration: none;
-}
-
 table {
 	text-align: center;
 	justify-content: center;
+	box-shadow: 1px 3px 4px 0 grey;
 }
 
 th {
@@ -83,28 +111,42 @@ th {
 	width: 10%;
 }
 
+td:hover {
+	box-shadow: 0 1px 1px 0 grey;
+
+}
+
 .sorted {
 	background-color: #99004d;
 	color: white;
 }
 
-
-
-.list-group-item{
-    font-size: 15px;
-    background-color: #99004d; 
+a {
+	text-decoration: none;
 }
 
-.username{
-    text-align: center;
-    font-color: #be0a66;
+img {
+    box-shadow: 0 3px 4px 0 grey;
 }
 
 .accountDetails{
+	box-shadow: 0 1px 4px 0 grey;
     text-align: center;
     font-size: 40px;
     font-color: #0DA1F0;
     font-style: italic;
+    background-color: #047A96;
+    border-radius: 4px;
+    justify-content: center;
+    align-content: center;
+    color: white;
+}
+
+.list-group-item{
+    font-size: 15px;
+    background-color: #99004d;
+    box-shadow: 0 3px 4px 0 grey;
+
 }
 
 .list-center{

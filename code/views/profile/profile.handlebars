@@ -1,8 +1,12 @@
 
 {{#each stats}}
 
-<div>
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-11 col-centered">
     <p class="accountDetails">{{username}}</p>
+</div>
+</div>
 </div>
 
 
@@ -17,22 +21,25 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-3 list-center">
-                    <div class="panel panel-attribute">
-                    <div class="panel-heading"><strong>Fitness Statistics</strong></div>
-                        <ul class="list-group">
-                            <li class="list-group-item"><strong>Bench Press:</strong>  {{bench_press}}</li>
-                            <li class="list-group-item"><strong>Military Press:</strong>  {{military_press}}</li>
-                            <li class="list-group-item"><strong>Squat:</strong>  {{squat}}</li>
-                            <li class="list-group-item"><strong>Deadlift:</strong>  {{deadlift}}</li>
-                            <li class="list-group-item"><strong>Height:</strong>  {{height}}</li>
-                            <li class="list-group-item"><strong>Weight:</strong>  {{weight}}</li>
-                            <li class="list-group-item"><strong>Gender:</strong>  {{gender}}</li>
-                            <li class="list-group-item"><strong>Gym:</strong>  {{gym}}</li>
-                        </ul>
-                    </div>
-<!--                 <div class="submit"><button type="submit" class="btn btn-info btn-submit">Update stats</button>
-                </div> -->
+                <span class="col-xs-6">
+                    <span class="col-xs-1"></span>
+                    <div class="col-xs-8 list-center">
+                        <div class="panel panel-attribute">
+                        <div class="panel-heading"><strong>Fitness Statistics</strong></div>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Bench Press:</strong>  {{bench_press}}</li>
+                                <li class="list-group-item"><strong>Military Press:</strong>  {{military_press}}</li>
+                                <li class="list-group-item"><strong>Squat:</strong>  {{squat}}</li>
+                                <li class="list-group-item"><strong>Deadlift:</strong>  {{deadlift}}</li>
+                                <li class="list-group-item"><strong>Height:</strong>  {{height}}</li>
+                                <li class="list-group-item"><strong>Weight:</strong>  {{weight}}</li>
+                                <li class="list-group-item"><strong>Gender:</strong>  {{gender}}</li>
+                                <li class="list-group-item"><strong>Gym:</strong>  {{gym}}</li>
+                            </ul>
+                        </div>
+                    </span>
+    <!--                 <div class="submit"><button type="submit" class="btn btn-info btn-submit">Update stats</button>
+                    </div> -->
                 </div>
             </div>
         </div>

@@ -12,7 +12,9 @@ router.use(function timeLog(req, res, next) {
 
 // define the root users route
 router.get('/', function(req, res) {
-  models.User.findAll({})
+  models.User.findAll({
+        order: '"username" ASC'
+  })
     .then(function (users) {
       if (users != null) {
         res.render('users/users', {users: users});
@@ -25,7 +27,7 @@ router.get('/', function(req, res) {
 router.get('/:username', function (req, res) {
   models.User.findOne({where: {username: req.params.username}})
     .then(function (user) {
-      res.send(user);
+      res.render('users/single/users', {user, user});
     });
 });
 
