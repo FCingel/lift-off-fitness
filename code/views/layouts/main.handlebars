@@ -19,22 +19,20 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 navbar">
-
-<!--     <ol class="list-inline">
-      <li id="navbar-link" href="/home"><strong>Lift-Off Fitness</a></strong></li>
-      <li class="btn btn-md btn-primary" href="/sign-in" role="button">Sign In</li>
-      <li class="btn btn-md btn-primary" href="/sign-up" role="button">Sign Up</li>
-      <li class="btn btn-md btn-primary" href="/users" role="button">Users</li>
-      <li class="btn btn-md btn-primary" href="/leaderboard" role="button">Leaderboard</li>
-    </ol> -->
-
-
-      <a id="navbar-link" href="/home"><strong>Lift-Off Fitness</a></strong>
-      <a class="btn btn-md btn-primary" href="/sign-in" role="button">Sign In</a>
-      <a class="btn btn-md btn-primary" href="/sign-up" role="button">Sign Up</a>
-      <a class="btn btn-md btn-primary" href="/users" role="button">Users</a>
-      <a class="btn btn-md btn-primary" href="/leaderboard" role="button">Leaderboard</a>
-     </div>
+    <div class="collapse navbar-collapse">
+      <a class="btn btn-lg navbar-left navbar-link" href="/"><strong>Lift-Off Fitness</strong></a></li>
+        <ul class="nav navbar-nav nav-pills navbar-right">
+          <li><a class="btn btn-lg" href="/leaderboard">Leaderboard</a></li>
+          <li><a class="btn btn-lg" href="/users">Users</a></li>
+          {{#if cur_user}}
+            <li><a class="btn btn-lg" href="/profile">Profile</a></li>
+            <li id="logout"><a class="btn btn-lg" href="#">Sign Out</a></li>
+          {{ else }}
+            <li><a class="btn btn-lg" href="/sign-in">Sign In</a></li>
+            <li><a class="btn btn-lg" href="/sign-up">Sign Up</a></li>
+          {{/if}}
+        </ul>
+    </div>
   </div>
   <div class="main-content">
   {{{ body }}}

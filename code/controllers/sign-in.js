@@ -53,33 +53,25 @@
 // module.exports = router;
 
 
-
-
-
-
-// from microblog
 const express = require('express');
 const passport = require('../middlewares/authentication');
 const Redirect = require('../middlewares/redirect');
+const router = express.Router();
 
-module.exports = {
-  registerRouter() {
-    const router = express.Router();
 
-    router.get('/', Redirect.ifLoggedIn('/profile'), this.index);
-    router.post('/', this.signin);
+router.get('/', Redirect.ifLoggedIn('/profile'), function(req, res) {
+  res.render('sign-in/signin', { error: req.flash('error') });
+});
 
-    return router;
-  },
-  index(req, res) {
-    res.render('sign-in', { error: req.flash('error') });
-  },
-  login(req, res) {
-    passport.authenticate('local', {
-      successRedirect: '/profile',
-      failureRedirect: '/sign-in',
-      failureFlash: true,
-      successFlash: true,
-    })(req, res);
-  },
-};
+
+router.post('/', function(req, res) {
+  passport.authenticate('local', {
+    successRedirect: '/profile/',
+    failureRedirect: '/sign-in',
+    failureFlash: true,
+    successFlash: true,
+  })(req, res);
+});
+
+
+module.exports = router;

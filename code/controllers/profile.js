@@ -57,23 +57,23 @@ router.get('/profile', function (req,res) {
 });
 
 
-// router.put('/', function(req,res) {
-//   console.log(req.body);
-//   models.Stats.update({
-//     bench_press: req.body.bench_press,
-//     military_press: req.body.military_press,
-//     squat: req.body.squat,
-//     deadlift: req.body.deadlift,
-//     height: req.body.height,
-//     weight: req.body.weight
-//   }).then(function (profile) {
-//     //SHOULD UPDATE PROFILE 
-//     res.redirect('/profile')
-//   }).catch(function (e) {
-//     res.render('profile', {errors: e.errors});
-//     //res.json(e);
-//   })
-// });
+router.put('/', function(req,res) {
+  console.log(req.body);
+  models.Stats.update({
+    bench_press: req.body.bench_press,
+    military_press: req.body.military_press,
+    squat: req.body.squat,
+    deadlift: req.body.deadlift,
+    height: req.body.height,
+    weight: req.body.weight
+  }).then(function (profile) {
+    //SHOULD UPDATE PROFILE 
+    res.redirect('/profile')
+  }).catch(function (e) {
+    res.render('profile', {errors: e.errors});
+    //res.json(e);
+  })
+});
 
 
 

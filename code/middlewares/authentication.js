@@ -9,11 +9,11 @@ function passwordsMatch(passwordSubmitted, storedPassword) {
 }
 
 passport.use(new LocalStrategy({
-  usernameField: 'email',
+  usernameField: 'username',
 },
-  (email, password, done) => {
+  (username, password, done) => {
     User.findOne({
-      where: { email },
+      where: { username },
     }).then((user) => {
       if (user) {
         if (passwordsMatch(password, user.password) === false) {
@@ -29,11 +29,11 @@ passport.use(new LocalStrategy({
 );
 
 passport.serializeUser((user, done) => {
-  done(null, user.username);
+  done(null, user.id);
 });
 
-passport.deserializeUser((username, done) => {
-  User.findById(username).then((user) => {
+passport.deserializeUser((userid, done) => {
+  User.findById(userid).then((user) => {
     if (user == null) {
       return done(null, false);
     }

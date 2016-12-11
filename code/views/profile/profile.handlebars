@@ -66,6 +66,18 @@
 </div>
 </div>
 
+  <script>
+    ;(function() {
+      $('#logout').click(function() {
+        $.post("/logout", function() {
+          window.location.href = '/';
+        });
+      });
+    })();
+  </script>
+
+  <li id="logout"><a href="#">Logout</a></li>
+
 
 <script>
 /* Set the width of the side navigation to 250px */

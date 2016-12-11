@@ -12,14 +12,13 @@
 	color: white;
 }
 
-#navbar-link {
+.navbar-link {
 	text-decoration: none;
 	text-align: left;
 	position: relative;
+	font-size: 25px;
+	margin-top: -4px;
 	top: 2px;
-
-	/*Temporary. Messes up bootstrap resizing*/
-	margin-right: 55%;
 }
 
 .main-content {
@@ -37,6 +36,13 @@
 	margin-top: 65px;
 	margin-bottom: 5%;
 	border-radius: 4px;
+}
+
+.info-heading {
+	text-align: center;
+	color: #4090cb;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .submit {
@@ -58,7 +64,7 @@
 }
 
 .faded {
-	color: white;
+	color: #d9d9d9;
 	pointer-events: none;
 
 }
@@ -94,11 +100,6 @@ th {
     color: white;
     background-color: #70456c;
 }
-
-
-
-
-
 
 
 /* The side navigation menu */

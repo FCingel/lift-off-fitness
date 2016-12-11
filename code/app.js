@@ -56,17 +56,11 @@ app.set('views', `${__dirname}/views/`);
 
 app.use(viewHelpers.register());
 
-// app.use(require('./controllers/'));
 
-models.sequelize.sync().then(() => {
-  app.listen(8000);
+
+app.get('/', function (req, res) {
+   res.redirect('/home');
 });
-
-
-
-// app.get('/', function (req, res) {
-//    res.redirect('/home');
-// });
 
 // Load and mount the home controller
 const home = require('./controllers/home');
@@ -111,5 +105,7 @@ const users = require('./controllers/users');
 app.use('/users', users);
 
 
-// module.exports = app;
-// app.listen(8000);
+models.sequelize.sync().then(() => {
+  app.listen(8000);
+});
+
