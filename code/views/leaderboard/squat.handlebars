@@ -25,7 +25,11 @@
       <td> {{username}}</td>
       <td> {{bench_press}} lbs</td>
       <td> {{military_press}} lbs</td>
+      {{#if @last}}
+        <td class="sorted" title="Skipped Leg Day?"> {{squat}} lbs</td>
+      {{else}}
       <td class="sorted"> {{squat}} lbs</td>
+      {{/if}}
       <td> {{deadlift}} lbs</td>
       <td> {{height}}"</td>
       <td> {{weight}} lbs</td>

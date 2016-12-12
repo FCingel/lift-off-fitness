@@ -23,7 +23,11 @@
     {{#each users}}
     <tr>
       <td> {{username}}</td>
+      {{#if @first}}
+        <td class="sorted" title="Mad gains!"> {{bench_press}} lbs</td>
+      {{else}}
       <td class="sorted"> {{bench_press}} lbs</td>
+      {{/if}}
       <td> {{military_press}} lbs</td>
       <td> {{squat}} lbs</td>
       <td> {{deadlift}} lbs</td>

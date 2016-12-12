@@ -15,6 +15,7 @@ module.exports = {
   },
   index(req, res) {
     res.render('profile', { user: req.user, success: req.flash('success') });
+    // res.render('users/single/users', {isLess: true, isMore: false});
   },
 };
 
@@ -25,10 +26,3 @@ router.get('/', Redirect.ifNotLoggedIn(), function(req, res) {
 
 
 module.exports = router;
-
-
-
-
-
-
-

@@ -39,10 +39,9 @@ router.get('/:username', function(req, res){
   }})
   .then(function(stats){
     res.render('users/single/users', {stats, stats});
+    // res.render('users/single/users', {isLess: true, isMore: false});
   });
 });
-
-
 
 
 module.exports = router;
