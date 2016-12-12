@@ -196,7 +196,7 @@ describe('User Model', function() {
             fitness_goal: 'I like to lift, its good for the mind and the body!!',
             height: '70',
             weight: '165',
-            gender: 'Male',
+            gender: 'Female',
             gym: 'Blink Fitness',
             bench_press: '225',
             military_press: '160',

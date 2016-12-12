@@ -36,11 +36,8 @@ router.post('/', function(req,res) {
   	firstName: req.body.firstName,
   	lastName: req.body.lastName,
   	email: req.body.email,
-  	password: req.body.password
-  })
-  models.Stats.create({
+  	password: req.body.password,
     gender: req.body.gender,
-    username: req.body.username,
     bench_press: req.body.bench_press,
     military_press: req.body.military_press,
     squat: req.body.squat,
@@ -48,8 +45,7 @@ router.post('/', function(req,res) {
     height: req.body.height,
     weight: req.body.weight
   }).then(function (signup) {
-  	//SHOULD REDIRECT TO PROFILE AFTER SUCCESSFUL SIGN UP
-    res.redirect('/users')
+    res.redirect('/profile')
   }).catch(function (e) {
     res.render('sign-up/signup', {errors: e.errors});
     //res.json(e);

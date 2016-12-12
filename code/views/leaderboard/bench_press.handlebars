@@ -22,9 +22,9 @@
   <tbody>
     {{#each users}}
     <tr>
-      <td> {{username}}</td>
+      <td class="username"><a href="/users/{{username}}" style="text-decoration: none; color: #7c003f;""><strong>{{username}}<strong></a></td>
       {{#if @first}}
-        <td class="sorted" title="Mad gains!"> {{bench_press}} lbs</td>
+      <td class="sorted" title="Mad gains!"> {{bench_press}} lbs</td>
       {{else}}
       <td class="sorted"> {{bench_press}} lbs</td>
       {{/if}}

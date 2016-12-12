@@ -47,6 +47,10 @@ app.use('/sign-up', signUp);
 const signIn = require('./controllers/sign-in');
 app.use('/sign-in', signIn);
 
+// Load and mount the users controller
+const users = require('./controllers/users');
+app.use('/users', users);
+
 // Load and mount the profile controller
 const profile = require('./controllers/profile');
 app.use('/profile', profile);
@@ -72,14 +76,11 @@ const leaderboard_deadlift = require('./controllers/leaderboard/deadlift');
 app.use('/leaderboard/deadlift', leaderboard_deadlift);
 
 
-// Load and mount the logout controller
-const logout = require('./controllers/logout');
-app.use('/logout', logout);
+// // Load and mount the logout controller
+// const logout = require('./controllers/logout');
+// app.use('/logout', logout);
 
 
-// Load and mount the users controller
-const users = require('./controllers/users');
-app.use('/users', users);
 
 
 models.sequelize.sync().then(() => {

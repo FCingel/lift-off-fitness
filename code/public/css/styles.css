@@ -54,6 +54,42 @@
 	margin: 0 auto;
 }
 
+#home-bg {
+	background-image: url("../images/liftoff/home-bg.jpg");
+	min-height: 100%;
+  	min-width: 100%;
+  	height: auto;
+	width: 100%;
+	position: fixed;
+  	top: 0;
+  	left: 0;
+  	background-size: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  #home-bg {
+    left: 50%;
+    margin-left: -512px;
+  }
+}
+
+.liftoff-title {
+	font-size: 100px;
+	font-family: Avenir, Verdana;
+	font-weight: 700;
+	color: white;
+	margin: 300px auto auto auto;
+	text-align: center;
+	text-shadow: 1px 1px 2px grey;
+}
+
+.liftoff-tagline {
+	font-size: 36px;
+	font-family: Avenir, Verdana;
+	color: white;
+	text-shadow: 1px 1px 2px grey;
+}
+
 .form {
 	background-color: #ebf3f9;
 	color: #7c003f;
@@ -74,6 +110,13 @@
 
 .info-heading h1 {
 	color: #7c003f;
+}
+
+.info {
+	/*text-align: center;*/
+	color: #3aacc7;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .submit {
@@ -112,13 +155,33 @@ th {
 }
 
 td:hover {
-	box-shadow: 0 1px 1px 0 grey;
-
+	box-shadow: 0 0 1px 0 grey;
 }
 
 .sorted {
 	background-color: #99004d;
 	color: white;
+}
+.username {
+	color: white;
+}
+
+.username .sorted:hover {
+	color: white;
+}
+
+.username-lg{
+	box-shadow: 0 1px 4px 0 grey;
+    text-align: center;
+    font-size: 40px;
+    font-color: #0DA1F0;
+    /*font-style: italic;*/
+    background-color: #047A96;
+    border-radius: 4px;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    /*padding-right: 50%;*/
 }
 
 a {
@@ -126,15 +189,15 @@ a {
 }
 
 img {
-    box-shadow: 0 3px 4px 0 grey;
+    box-shadow: 0 1px 4px 1px grey;
 }
 
-.accountDetails{
+.account-details{
 	box-shadow: 0 1px 4px 0 grey;
     text-align: center;
     font-size: 40px;
     font-color: #0DA1F0;
-    font-style: italic;
+    /*font-style: italic;*/
     background-color: #047A96;
     border-radius: 4px;
     justify-content: center;
@@ -145,7 +208,7 @@ img {
 .list-group-item{
     font-size: 15px;
     background-color: #99004d;
-    box-shadow: 0 3px 4px 0 grey;
+    box-shadow: 0 2px 4px 0 grey;
 
 }
 
@@ -153,12 +216,13 @@ img {
    text-align: center;
 }
 
-.panel-stats{
-    font-size: 20px;
-    background-color: #7c003f;
-    color: white;
+.user-info {
+	margin-top: 30px;
 }
 
+.panel-heading .goal {
+	height: 20px;
+}
 
 .panel-stats{
     font-size: 20px;
@@ -172,10 +236,14 @@ img {
     font-weight: bold;
     text-align: center;
     background-color: #7c003f;
+    height: 28px;
+    width: 95%;
 }
 .panel-fitness p{
+	font-size: 18px;
     font-weight: normal;
     color: white;
+    box-shadow: 0 2px 4px 0 grey;
 }
 
 .image-border{

@@ -14,22 +14,6 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous">
-  </script>
-
-  <script>
-    ;(function() {
-      $('#logout').click(function() {
-        $.post("/logout", function() {
-          window.location.href = '/';
-        });
-      });
-    })();
-  </script>
-
 </head>
 <body>
 <div class="container-fluid">
@@ -38,14 +22,14 @@
     <div class="navbar-collapse">
       <a class="btn btn-lg navbar-left navbar-link" href="/"><strong>Lift-Off Fitness</strong></a></li>
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="btn btn-lg nav-btn" href="/leaderboard">Leaderboard</a></li>
-          <li><a class="btn btn-lg nav-btn" href="/users" title="Spot me bro!">Spotters</a></li>
+          <li><a class="btn btn-lg nav-btn" href="/leaderboard" title="Can you become the best?">Leaderboard</a></li>
+          <li><a class="btn btn-lg nav-btn" href="/users" title="Need a spotter?">Spotters</a></li>
           {{#if cur_user}}
-            <li><a class="btn btn-lg nav-btn" href="/profile">Profile</a></li>
-            <li id="logout"><a class="btn btn-lg nav-btn" href="#" title="Don't quit now.">Sign Out</a></li>
+            <li><a class="btn btn-lg nav-btn" href="/profile" title="View & edit your info and stats!">Profile</a></li>
+            <li id="logout"><a class="btn btn-lg nav-btn" href="#" title="Don't quit now!">Sign Out</a></li>
           {{ else }}
-            <li><a class="btn btn-lg nav-btn" href="/sign-up" title="Let's lift">Sign Up</a></li>
-            <li><a class="btn btn-lg nav-btn" href="/sign-in">Sign In</a></li>
+            <li><a class="btn btn-lg nav-btn" href="/sign-up" title="Let's lift!">Sign Up</a></li>
+            <li><a class="btn btn-lg nav-btn" href="/sign-in" title="Welcome back!">Sign In</a></li>
           {{/if}}
         </ul>
     </div>
@@ -55,7 +39,25 @@
   </div>
 </div>
 
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous">
+</script>
+
+<script>
+  ;(function() {
+    $('#logout').click(function() {
+      $.post("/logout", function() {
+        window.location.href = '/';
+      });
+    });
+  })();
+</script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>

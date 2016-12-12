@@ -1,6 +1,6 @@
 <div class="row">
 <div class="col-xs-12">
-<div class="info-heading"><h1><strong>Spotters</strong></h1>
+<div class="info-heading" style="padding-bottom: 40px;"><h1><strong>Spotters</strong></h1>
 </div>
 </div>
 
@@ -9,16 +9,22 @@
 <div class="row">
   <span class="col-xs-1"></span>
   <div class="col-xs-2">
-    <img src="/images/{{username}}.jpg" width="150" height="150"/>
+    <a href="/images/{{username}}.jpg"><img src="/images/{{username}}.jpg" width="200" height="200"/></a>
   </div>
-  <div class="col-xs-9">
-  	<h3><a href="/users/{{username}}" style="text-decoration: none;">{{username}}</a><h3>
-  	<h3>{{firstName}} {{lastName}}</h3>
+  <div class="col-xs-9" style="margin-top: -30px;">
+  <hr/>
+  <div class="col-xs-12">
+  	<h3><a class="username-lg" href="/users/{{username}}" style="text-decoration: none; background-color: #7c003f;">{{username}}</a></h3>
+  </div>
+  <div class="col-xs-12">
+<h3 class="info">{{firstName}} {{lastName}}</h3>
   	<h4>{{fitness_goal}}</h4>
+    </div>
 <!--   	<h4><u>Email</u>: {{email}}</h4>
   	<h4><u>Password</u>: {{password}}</h4> -->
-  	<!-- <hr/> -->
+  	<hr/>
   </div>
   <span class="row"></span>
 </div>
 {{/each}}
+</div>

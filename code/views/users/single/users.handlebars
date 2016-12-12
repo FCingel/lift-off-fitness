@@ -1,42 +1,22 @@
-
-<!-- {{user.username}} -->
-
 <div class="container-fluid">
 <div class="row">
 <div class="col-xs-11 col-centered">
-    <p class="accountDetails">{{user.username}}</p>
+    <p class="account-details"><a style="text-decoration: none; color: white" href="/users/{{user.username}}">{{user.username}}</a></p>
 </div>
 </div>
 </div>
 
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row user-info">
 
             <div class="col-xs-6">
-                <div class="col-xs-12">
-                    <center><img class="image-border" src="/images/{{user.username}}.jpg" width="300" height="300"></center>
-
-                <div class="panel panel-default panel-fitness">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">Fitness Goal</div>
-                        <div class="panel-body">
-                            <p>{{user.fitness_goal}}</p>
-                        </div>
-                    </div>
+                <div class="col-xs-12"> 
+                    <center><a href="/images/{{user.username}}.jpg"><img class="image-border" src="/images/{{user.username}}.jpg" width="300" height="300"></a></center>
+                    <center><h2 class="info-heading">{{user.firstName}} {{user.lastName}}</h2></center>
+                    <center><div class="panel panel-default panel-fitness"><p>{{user.fitness_goal}}</p></div></center>
                 </div>
             </div>
-
-
-
-
-
-<!--             <div class="col-xs-6">
-                <div>
-                    <center><img src="/images/{{user.username}}.jpg" width="300" height="300"></center>
-                    <center>{{user.fitness_goal}}</center>
-                </div>
-            </div> -->
 
         <div class="container-fluid">
             <div class="row">
@@ -46,26 +26,25 @@
                         <div class="panel panel-stats">
                         <div class="panel-heading"><strong>Fitness Statistics</strong></div>
                             <ul class="list-group">
-                                <li class="list-group-item"><strong>Bench Press:</strong>  {{user.bench_press}}</li>
+                                <li class="list-group-item"><strong>Bench Press:</strong>  {{user.bench_press}} lbs</li>
                                 <!-- {{#if isLess}} <li class="list-group-item"> Do you even lift? </li>{{/if}} -->
-                                <li class="list-group-item"><strong>Military Press:</strong>  {{user.military_press}}</li>
-                                <li class="list-group-item"><strong>Squat:</strong>  {{user.squat}}</li>
-                                <li class="list-group-item"><strong>Deadlift:</strong>  {{user.deadlift}}</li>
-                                <li class="list-group-item"><strong>Height:</strong>  {{user.height}}</li>
-                                <li class="list-group-item"><strong>Weight:</strong>  {{user.weight}}</li>
+                                <li class="list-group-item"><strong>Military Press:</strong>  {{user.military_press}} lbs</li>
+                                <li class="list-group-item"><strong>Squat:</strong>  {{user.squat}} lbs</li>
+                                <li class="list-group-item"><strong>Deadlift:</strong>  {{user.deadlift}} lbs</li>
+                                <li class="list-group-item"><strong>Height:</strong>  {{user.height}}"</li>
+                                <li class="list-group-item"><strong>Weight:</strong>  {{user.weight}} lbs</li>
                                 <li class="list-group-item"><strong>Gender:</strong>  {{user.gender}}</li>
                                 <li class="list-group-item"><strong>Gym:</strong>  {{user.gym}}</li>
                             </ul>
                         </div>
                     </span>
-    <!--                 <div class="submit"><button type="submit" class="btn btn-info btn-submit">Update stats</button>
-                    </div> -->
                 </div>
             </div>
         </div>
-
-<!--     <div>
-        <center><div><button type="submit" action="/home" class="btn btn-danger">Delete Account</button></center></div>
-    </div> -->
+        
+<!--         {{#if cur_user}}
+            <li><a class="btn btn-lg nav-btn" href="/update">Update Profile</a></li>
+            <li><a class="btn btn-lg nav-btn" href="/delete">Delete Account</a></li>
+        {{/if}} -->
     </div>
 </div>
