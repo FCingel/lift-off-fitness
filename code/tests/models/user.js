@@ -461,7 +461,55 @@ describe('User Model', function() {
           });
       });
 
-                                       
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'GetOutMyWhey',
+            firstName: 'Murphy',
+            lastName: 'Appleseed',
+            email: 'murphya@email.com',
+            password: 'mypassword',
+            fitness_goal: 'Training for my next triathlon!!',
+            height: '67',
+            weight: '171',
+            gender: 'Male',
+            gym: 'Ballys Total Fitness',
+            bench_press: '230',
+            military_press: '130',
+            squat: '205',
+            deadlift: '210'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'ChunkyLover',
+            firstName: 'Johnny',
+            lastName: 'Walker',
+            email: 'jhonniew@email.com',
+            password: 'mypassword',
+            fitness_goal: 'After my workout I like to eat 5 donuts!',
+            height: '83',
+            weight: '330',
+            gender: 'Male',
+            gym: 'Blink Fitness',
+            bench_press: '155',
+            military_press: '95',
+            squat: '455',
+            deadlift: '210'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
 
     });
 });

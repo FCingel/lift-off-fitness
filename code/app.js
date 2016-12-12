@@ -81,8 +81,6 @@ app.use('/leaderboard/deadlift', leaderboard_deadlift);
 // app.use('/logout', logout);
 
 
-
-
 models.sequelize.sync().then(() => {
   app.listen(8000);
 });
