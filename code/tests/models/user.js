@@ -288,7 +288,7 @@ describe('User Model', function() {
 
       it('Should save when all properties are provided correctly (within validations)',function (done) {
           models.User.create({
-            username: 'DollFace21',
+            username: 'JustPeachy256',
             firstName: 'Fiona',
             lastName: 'Crystal',
             email: 'dianac@email.com',
@@ -338,7 +338,7 @@ describe('User Model', function() {
 
       it('Should save when all properties are provided correctly (within validations)',function (done) {
           models.User.create({
-            username: 'Beautylicious',
+            username: 'LiftEveryday65',
             firstName: 'Alana',
             lastName: 'Spencer',
             email: 'alanas@email.com',
@@ -363,7 +363,7 @@ describe('User Model', function() {
 
       it('Should save when all properties are provided correctly (within validations)',function (done) {
           models.User.create({
-            username: 'Barbie1995',
+            username: 'TheOneAndOnly',
             firstName: 'Jessie',
             lastName: 'Ortiz',
             email: 'jessicao@email.com',
@@ -493,7 +493,7 @@ describe('User Model', function() {
             lastName: 'Walker',
             email: 'jhonniew@email.com',
             password: 'mypassword',
-            fitness_goal: 'After my workout I like to eat 5 donuts!',
+            fitness_goal: 'Trying to improve my physique!',
             height: '83',
             weight: '330',
             gender: 'Male',
@@ -513,10 +513,10 @@ describe('User Model', function() {
 
       it('Should save when all properties are provided correctly (within validations)',function (done) {
           models.User.create({
-            username: 'GoodOldJack',
-            firstName: 'Jack',
-            lastName: 'Daniels',
-            email: 'JackieD@email.com',
+            username: 'GoodOldJim',
+            firstName: 'Jim',
+            lastName: 'Smith',
+            email: 'JimSmith@email.com',
             password: 'mypassword',
             fitness_goal: 'I gotta get rid of this gut.',
             height: '87',
