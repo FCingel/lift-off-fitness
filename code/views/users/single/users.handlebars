@@ -1,3 +1,4 @@
+<div id="users-bg">
 <div class="container-fluid">
 <div class="row">
 <div class="col-xs-11 col-centered">
@@ -14,6 +15,9 @@
                 <div class="col-xs-12"> 
                     <center><a href="/images/{{user.username}}.jpg"><img class="image-border" src="/images/{{user.username}}.jpg" width="300" height="300"></a></center>
                     <center><h2 class="info-heading">{{user.firstName}} {{user.lastName}}</h2></center>
+                    {{#if cur_user}}
+                    <center><h3 class="info-heading-sm">{{user.email}}</h3></center>
+                    {{/if}}
                     <center><div class="panel panel-default panel-fitness"><p>{{user.fitness_goal}}</p></div></center>
                 </div>
             </div>
@@ -26,15 +30,17 @@
                         <div class="panel panel-stats">
                         <div class="panel-heading"><strong>Fitness Statistics</strong></div>
                             <ul class="list-group">
-                                <li class="list-group-item"><strong>Bench Press:</strong>  {{user.bench_press}} lbs</li>
+                                <li class="profile list-group-item"><strong>Bench Press:</strong>  {{user.bench_press}} lbs</li>
                                 <!-- {{#if isLess}} <li class="list-group-item"> Do you even lift? </li>{{/if}} -->
-                                <li class="list-group-item"><strong>Military Press:</strong>  {{user.military_press}} lbs</li>
-                                <li class="list-group-item"><strong>Squat:</strong>  {{user.squat}} lbs</li>
-                                <li class="list-group-item"><strong>Deadlift:</strong>  {{user.deadlift}} lbs</li>
-                                <li class="list-group-item"><strong>Height:</strong>  {{user.height}}"</li>
-                                <li class="list-group-item"><strong>Weight:</strong>  {{user.weight}} lbs</li>
-                                <li class="list-group-item"><strong>Gender:</strong>  {{user.gender}}</li>
-                                <li class="list-group-item"><strong>Gym:</strong>  {{user.gym}}</li>
+                                <li class="list-group-item profile"><strong>Military Press:</strong>  {{user.military_press}} lbs</li>
+                                <li class="list-group-item profile"><strong>Squat:</strong>  {{user.squat}} lbs</li>
+                                <li class="list-group-item profile"><strong>Deadlift:</strong>  {{user.deadlift}} lbs</li>
+                                <li class="list-group-item profile"><strong>Height:</strong>  {{user.height}}"</li>
+                                <li class="list-group-item profile"><strong>Weight:</strong>  {{user.weight}} lbs</li>
+                                <li class="list-group-item profile"><strong>Gender:</strong>  {{user.gender}}</li>
+                                <li class="list-group-item profile"><strong>Gym:</strong>  {{user.gym}}</li>
+                                <!-- <li class="list-group-item profile"><strong>Country:</strong>  {{user.country}}</li> -->
+
                             </ul>
                         </div>
                     </span>
@@ -48,3 +54,4 @@
         {{/if}} -->
     </div>
 </div>
+

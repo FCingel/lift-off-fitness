@@ -18,7 +18,7 @@
 	text-align: left;
 	position: relative;
 	font-size: 26px;
-	margin-top: -5px;
+	margin-top: -3px;
 	top: 2px;
 }
 
@@ -45,6 +45,28 @@
 	color: #7c003f;
 }
 
+.user-dropdown{
+	min-width: 140px;
+	background-color: #3aacc7;
+	font-weight: 600;
+	color: white;
+	font-size: 18px;
+	margin-top: 3px;
+	padding: 10px;
+}
+
+.user-dropdown:hover {
+	color: #99004d;
+	background-color: #f2f2f2;
+}
+
+#logout .btn-signout {
+	position: relative;
+	font-weight: bold;
+	color: #3aacc7;
+
+}
+
 .main-content {
 	margin-top: 70px;
 }
@@ -52,6 +74,13 @@
 .col-centered {
 	float: none;
 	margin: 0 auto;
+}
+
+.liftoff-logo {
+	height: 40px;
+	width: 40px;
+	box-shadow: none;
+	margin: 5px auto auto -18px;
 }
 
 #home-bg {
@@ -66,8 +95,27 @@
   	background-size: cover;
 }
 
+#leaderboard-bg {
+	background-image: url("../images/liftoff/leaderboard-bg.jpg");
+	background-repeat: repeat-y;
+	min-height: 100%;
+  	min-width: 100%;
+  	height: auto;
+	width: 100%;
+	/*position: fixed;*/
+  	top: 0;
+  	left: 0;
+  	background-size: cover;
+  	margin-top: -16px;
+}
+
+#users-bg {
+	/*background-image: url("../images/liftoff/home-bg.jpg");*/
+  	margin-top: -20px;
+}
+
 @media screen and (max-width: 1024px) {
-  #home-bg {
+  #home-bg #leaderboard-bg #users-bg {
     left: 50%;
     margin-left: -512px;
   }
@@ -106,10 +154,21 @@
 	color: #3aacc7;
 	font-weight: bold;
 	font-size: 20px;
+	text-shadow: 1px 1px 1px white;
 }
 
 .info-heading h1 {
-	color: #7c003f;
+	color: #99004d;
+	text-shadow: 1px 1px 1px grey;
+}
+
+.info-heading h5 {
+	text-shadow: 0 0 .1px black;
+}
+
+.info-heading-sm {
+	font-size: 18px;
+	margin-top: -8px;
 }
 
 .info {
@@ -121,6 +180,9 @@
 
 .submit {
 	text-align: right;
+}
+.table-hover {
+	background-color: white;
 }
 
 .table-title {
@@ -138,15 +200,15 @@
 }
 
 .faded {
-	color: #d9d9d9;
+	color: #b3b3b3;
 	pointer-events: none;
-
 }
 
 table {
 	text-align: center;
 	justify-content: center;
-	box-shadow: 1px 3px 4px 0 grey;
+	box-shadow: 1px 1px 6px 0 black;
+	padding-top: 100px;
 }
 
 th {
@@ -162,26 +224,34 @@ td:hover {
 	background-color: #99004d;
 	color: white;
 }
-.username {
-	color: white;
+.username a {
+	color: #7c003f;
+	font-weight: 900;
+	font-family: Avenir, Verdana;
+	font-size: 20px;
+	text-shadow: 1px 1px 2px #d9d9d9;
 }
 
-.username .sorted:hover {
-	color: white;
+.username a:hover {
+	color: #99004d;
 }
 
 .username-lg{
-	box-shadow: 0 1px 4px 0 grey;
+	text-shadow: 1px 1px 1px black;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     font-color: #0DA1F0;
-    /*font-style: italic;*/
-    background-color: #047A96;
     border-radius: 4px;
     justify-content: center;
     align-content: center;
     color: white;
-    /*padding-right: 50%;*/
+}
+
+.info-small{
+	font-size: 16px;
+	font-family: Avenir, Verdana;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #d9d9d9;
 }
 
 a {
@@ -197,7 +267,6 @@ img {
     text-align: center;
     font-size: 40px;
     font-color: #0DA1F0;
-    /*font-style: italic;*/
     background-color: #047A96;
     border-radius: 4px;
     justify-content: center;
@@ -205,11 +274,19 @@ img {
     color: white;
 }
 
-.list-group-item{
+.list-group-item.profile{
     font-size: 15px;
     background-color: #99004d;
     box-shadow: 0 2px 4px 0 grey;
+}
 
+.list-group-item.spotter{
+	color: white;
+    font-size: 15px;
+    background-color: #cc0066;
+    text-shadow: 1px 1px 1px #595959;
+    box-shadow: 0 2px 4px 0 grey;
+    border-color: #7c003f;
 }
 
 .list-center{

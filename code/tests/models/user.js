@@ -418,7 +418,7 @@ describe('User Model', function() {
             lastName: 'Junior',
             email: 'carlj@email.com',
             password: 'transformerguy',
-            fitness_goal: 'I like to eat weights for breakfast.',
+            fitness_goal: 'I eat dumbbells for breakfast.',
             height: '95',
             weight: '275',
             gender: 'Male',
@@ -502,6 +502,31 @@ describe('User Model', function() {
             military_press: '95',
             squat: '455',
             deadlift: '210'
+          })
+          .then(function () {
+            done(); // Pass if it SAVES
+          })
+          .catch(function (e) {
+            done(); 
+          });
+      });
+
+      it('Should save when all properties are provided correctly (within validations)',function (done) {
+          models.User.create({
+            username: 'GoodOldJack',
+            firstName: 'Jack',
+            lastName: 'Daniels',
+            email: 'JackieD@email.com',
+            password: 'mypassword',
+            fitness_goal: 'I gotta get rid of this gut.',
+            height: '87',
+            weight: '222',
+            gender: 'Male',
+            gym: 'My House',
+            bench_press: '175',
+            military_press: '105',
+            squat: '255',
+            deadlift: '225'
           })
           .then(function () {
             done(); // Pass if it SAVES

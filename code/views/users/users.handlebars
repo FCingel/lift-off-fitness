@@ -1,30 +1,32 @@
+<div class="container-fluid" id="users-bg">
 <div class="row">
 <div class="col-xs-12">
-<div class="info-heading" style="padding-bottom: 40px;"><h1><strong>Spotters</strong></h1>
+<div class="info-heading"><h1><strong>Spotters</strong></h1>
+</div>
 </div>
 </div>
 
-<!-- Prints out information for each User -->
 {{#each users}}
 <div class="row">
-  <span class="col-xs-1"></span>
-  <div class="col-xs-2">
-    <a href="/images/{{username}}.jpg"><img src="/images/{{username}}.jpg" width="200" height="200"/></a>
-  </div>
-  <div class="col-xs-9" style="margin-top: -30px;">
   <hr/>
-  <div class="col-xs-12">
-  	<h3><a class="username-lg" href="/users/{{username}}" style="text-decoration: none; background-color: #7c003f;">{{username}}</a></h3>
+  <span class="col-xs-1"></span>
+  <div class="col-xs-1">
+      <a href="/images/{{username}}.jpg"><img src="/images/{{username}}.jpg" width="85" height="85"/></a>
   </div>
-  <div class="col-xs-12">
-<h3 class="info">{{firstName}} {{lastName}}</h3>
-  	<h4>{{fitness_goal}}</h4>
-    </div>
-<!--   	<h4><u>Email</u>: {{email}}</h4>
-  	<h4><u>Password</u>: {{password}}</h4> -->
-  	<hr/>
+  <div class="col-xs-2">
+      <div class="username"><a href="/users/{{username}}" style="text-decoration: none;">{{username}}</a></div>
+      <div class="info-small">{{firstName}} {{lastName}}</div>
+      <div>{{gym}}</div>
+      <!-- <div>{{country}}</div> -->
+      <!-- Add country in future -->
   </div>
-  <span class="row"></span>
+  <div class="col-xs-6">
+      <li class="list-group-item spotter" style="margin-top: 19px;">{{fitness_goal}}</li>
+  </div>
+<!--   <div class="col-xs-2">
+      <li class="list-group-item spotter">{{firstName}}</li>
+  </div> -->
+
 </div>
 {{/each}}
-</div>
+<hr/>

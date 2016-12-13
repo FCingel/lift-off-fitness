@@ -75,10 +75,9 @@ app.use('/leaderboard/squat', leaderboard_squat);
 const leaderboard_deadlift = require('./controllers/leaderboard/deadlift');
 app.use('/leaderboard/deadlift', leaderboard_deadlift);
 
-
-// // Load and mount the logout controller
-// const logout = require('./controllers/logout');
-// app.use('/logout', logout);
+// Load and mount the logout controller
+const logout = require('./controllers/logout');
+app.use('/logout', logout);
 
 
 models.sequelize.sync().then(() => {
